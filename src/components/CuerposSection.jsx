@@ -41,7 +41,7 @@ const cuerposData = [
       'A través del servicio fraterno dinámico, el Priorato prepara a los jóvenes para la vida de liderazgo activo y compromiso cívico en su comunidad.'
     ],
     structure: [
-      'Priorato oficial: Priorato Caballeros Templarios del Oriente N° 82',
+      'Nombre oficial: Priorato Caballeros Templarios del Oriente N° 82',
       'Registro Internacional: #75800',
       'Ilustre Comendador Caballero: Alviery Anas (Gestión II-2026)',
       'Requisito de ingreso: Ser Mayor de 17 años y menor de 21 años, ser de Grado DeMolay activo y tener minimo 2 años en la orden.'

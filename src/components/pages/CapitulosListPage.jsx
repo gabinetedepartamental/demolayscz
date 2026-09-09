@@ -1,12 +1,12 @@
 import React from 'react';
 import { ArrowLeft, Calendar, User, Users, Swords } from 'lucide-react';
-import logoCantera from '../../assets/images/cantera.png';
-import logoAyf from '../../assets/images/ayf.png';
-import logoPrimax from '../../assets/images/primax.jpeg';
-import logoCna from '../../assets/images/cna.jpeg';
-import logoPaititi from '../../assets/images/paititi.jpeg';
-import logoGrigota from '../../assets/images/grigota.jpeg';
-import logoJdo from '../../assets/images/jdo.jpeg';
+import logoCantera from '../../assets/images/logos/cantera.png';
+import logoAyf from '../../assets/images/logos/ayf.png';
+import logoPrimax from '../../assets/images/logos/primax.jpeg';
+import logoCna from '../../assets/images/logos/cna.jpeg';
+import logoPaititi from '../../assets/images/logos/paititi.jpeg';
+import logoGrigota from '../../assets/images/logos/grigota.jpeg';
+import logoJdo from '../../assets/images/logos/jdo.jpeg';
 
 const capitulos = [
   {
@@ -56,7 +56,7 @@ const capitulos = [
     logo: logoAyf,
     founded: '28 de Octubre de 2002',
     founder: 'Carlos Balcázar',
-    members: 22,
+    members: 38,
     motto: 'Guiados por la Estrella del Deber'
   },
   {

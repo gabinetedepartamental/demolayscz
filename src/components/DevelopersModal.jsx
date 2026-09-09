@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, Code2, Sparkles, Shield, Heart, ExternalLink, Award } from 'lucide-react';
-import imgVargas from '../assets/images/vargas.jpeg';
-import imgSandoval from '../assets/images/sandoval.jpeg';
+import imgVargas from '../assets/images/autoridades/vargas.jpeg';
+import imgSandoval from '../assets/images/autoridades/sandoval.jpeg';
 
 export default function DevelopersModal({ isOpen, onClose }) {
   if (!isOpen) return null;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, ChevronLeft, ChevronRight, Award } from 'lucide-react';
-import imgSandoval from '../assets/images/sandoval.jpeg';
-import imgSotelo from '../assets/images/sotelo saco.jpeg';
+import imgSandoval from '../assets/images/autoridades/sandoval.jpeg';
+import imgSotelo from '../assets/images/autoridades/sotelo saco.jpeg';
 
 const mcdsData = [
   {

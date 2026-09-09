@@ -1,6 +1,6 @@
 import React from 'react';
 import { Globe, MapPin, ExternalLink, Mail } from 'lucide-react';
-import logo from '../assets/images/logo1.png';
+import logo from '../assets/images/logos/logo1.png';
 
 export default function Footer({ onOpenDevelopers }) {
   const currentYear = new Date().getFullYear();

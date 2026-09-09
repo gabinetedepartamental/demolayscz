@@ -1,6 +1,6 @@
 import React from 'react';
 import { Compass, BookOpen, ChevronDown } from 'lucide-react';
-import logo from '../assets/images/logo1.png';
+import logo from '../assets/images/logos/logo1.png';
 
 export default function Hero({ onPageChange }) {
   const handlePageTransition = (id) => {

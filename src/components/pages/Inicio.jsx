@@ -1,8 +1,8 @@
 import React from 'react';
 import { Heart, Compass, Users, UserPlus, ShieldCheck, Sparkles, Flag, BookOpen, Award, Calendar } from 'lucide-react';
-import logo from '../../assets/images/logo1.png';
-import imgLand from '../../assets/images/land.png';
-import imgJaques from '../../assets/images/jaques.png';
+import logo from '../../assets/images/logos/logo1.png';
+import imgLand from '../../assets/images/logos/land.png';
+import imgJaques from '../../assets/images/logos/jaques.png';
 
 export default function Inicio() {
   const virtues = [

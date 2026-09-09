@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, MapPin } from 'lucide-react';
-import logo from '../assets/images/logo1.png';
+import logo from '../assets/images/logos/logo1.png';
 
 const navLinks = [
   { name: 'Inicio', id: 'inicio' },

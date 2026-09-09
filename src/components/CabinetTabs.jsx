@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { Shield, Users, Award, Star, ChevronLeft, ChevronRight, RotateCw, Clock, Quote, Swords, Gem } from 'lucide-react';
 
-import imgSandoval from '../assets/images/sandoval.jpeg';
-import imgArchanjo from '../assets/images/archanjo.jpeg';
-import imgSaucedo from '../assets/images/saucedo.jpeg';
-import imgBonanken from '../assets/images/bonanken.jpeg';
-import imgAnas from '../assets/images/anas.jpeg';
-import imgGuardia from '../assets/images/guardia.jpeg';
-import imgMontano from '../assets/images/montano.jpeg';
-import imgVargas from '../assets/images/vargas.jpeg';
-import imgSotelo from '../assets/images/sotelo saco.jpeg';
-import imgCruz from '../assets/images/teddy.png';
-import imgRoca from '../assets/images/robertor.png';
-import imgRocaMC from '../assets/images/robertomc.jpeg';
-import imgBallivian from '../assets/images/ballivian.jpeg';
-import imgSebastian from '../assets/images/sebastian.jpeg';
-import imgLucasFranco from '../assets/images/lucas franco.jpeg';
-import imgAlvieryIlustre from '../assets/images/alviery ilustre.jpeg';
-import imgAlvieryMentor from '../assets/images/alviery mentor.jpeg';
-import imgBastian from '../assets/images/bastian.jpeg';
-import imgLucasMorris from '../assets/images/lucas morris.jpeg';
-import imgTadeo from '../assets/images/tadeo.jpeg';
-import imgMazzone from '../assets/images/mazzone.jpeg';
+import imgSandoval from '../assets/images/autoridades/sandoval.jpeg';
+import imgArchanjo from '../assets/images/autoridades/archanjo.jpeg';
+import imgSaucedo from '../assets/images/autoridades/saucedo.jpeg';
+import imgBonanken from '../assets/images/autoridades/bonanken.jpeg';
+import imgAnas from '../assets/images/autoridades/anas.jpeg';
+import imgGuardia from '../assets/images/autoridades/guardia.jpeg';
+import imgMontano from '../assets/images/autoridades/montano.jpeg';
+import imgVargas from '../assets/images/autoridades/vargas.jpeg';
+import imgSotelo from '../assets/images/autoridades/sotelo saco.jpeg';
+import imgCruz from '../assets/images/autoridades/teddy.png';
+import imgRoca from '../assets/images/autoridades/robertor.png';
+import imgRocaMC from '../assets/images/autoridades/robertomc.jpeg';
+import imgBallivian from '../assets/images/autoridades/ballivian.jpeg';
+import imgSebastian from '../assets/images/autoridades/sebastian.jpeg';
+import imgLucasFranco from '../assets/images/autoridades/lucas franco.jpeg';
+import imgAlvieryIlustre from '../assets/images/autoridades/alviery ilustre.jpeg';
+import imgAlvieryMentor from '../assets/images/autoridades/alviery mentor.jpeg';
+import imgBastian from '../assets/images/autoridades/bastian.jpeg';
+import imgLucasMorris from '../assets/images/autoridades/lucas morris.jpeg';
+import imgTadeo from '../assets/images/autoridades/tadeo.jpeg';
+import imgMazzone from '../assets/images/autoridades/mazzone.jpeg';
 
 const actualesData = [
   {
@@ -84,8 +84,8 @@ const gabineteData = [
     image: imgSandoval,
     cargos: 'Maestre Consejero Departamental, Maestre Consejero Capitular, Comendador Paje de Priorato.',
     capituloMadre: 'Grigota 476 (#75008)',
-    grado: 'Chevalier, Sir',
-    tiempoOrden: '5 años',
+    grado: 'Sir',
+    tiempoOrden: '4 años',
     reconocimientos: 'Líder Destacado de Gestión 2025, Distinción al Mérito DeMolay.',
     fraseMotivadora: 'El liderazgo se demuestra con el ejemplo y la guía constante, no con el título del cargo.'
   },

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Shield, Award, Star, Compass } from 'lucide-react';
-import logoBlason from '../assets/images/Blason.png';
-import logoChevalier from '../assets/images/chevalierlogo.png';
-import logoCastillo from '../assets/images/castillo.png';
-import logoPcto from '../assets/images/pcto.png';
+import logoBlason from '../assets/images/logos/Blason.png';
+import logoChevalier from '../assets/images/logos/chevalierlogo.png';
+import logoCastillo from '../assets/images/logos/castillo.png';
+import logoPcto from '../assets/images/logos/pcto.png';
 
 const cuerposData = [
   {

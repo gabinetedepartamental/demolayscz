@@ -286,7 +286,7 @@ export default function McdCarousel() {
               <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-between min-h-[320px] text-left">
                 <div>
                   <span className="text-[10px] font-bold text-demolay-green-800 bg-demolay-green-900/10 px-3 py-1 rounded-full border border-demolay-green/20 tracking-wider uppercase inline-block mb-3 font-sans">
-                    Líder Regional
+                    Reprsentante Regional
                   </span>
 
                   <h3 className="font-serif font-bold text-2xl md:text-3xl text-demolay-green-950 mb-1 leading-tight">
@@ -340,8 +340,8 @@ export default function McdCarousel() {
                 key={mcd.year}
                 onClick={() => selectSlide(idx)}
                 className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${currentIndex === idx
-                    ? 'w-8 bg-demolay-gold'
-                    : 'w-2 bg-stone-300 hover:bg-stone-400'
+                  ? 'w-8 bg-demolay-gold'
+                  : 'w-2 bg-stone-300 hover:bg-stone-400'
                   }`}
                 aria-label={`Ir al año ${mcd.year}`}
               />

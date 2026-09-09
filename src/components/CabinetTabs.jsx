@@ -80,10 +80,10 @@ const gabineteData = [
     name: 'MCD. Armando Sandoval Frias',
     office: 'Maestre Consejero Departamental',
     term: 'Gestión 2026',
-    chapter: 'Campamento de Santa Cruz',
+    chapter: 'Capitulo Grigota 476',
     image: imgSandoval,
-    cargos: 'Maestre Consejero Departamental, Ex Maestre Consejero, Representante Distrital.',
-    capituloMadre: 'Campamento de Santa Cruz',
+    cargos: 'Maestre Consejero Departamental, Maestre Consejero Capitular, Comendador Paje de Priorato.',
+    capituloMadre: 'Grigota 476 (#75008)',
     grado: 'Chevalier, Sir',
     tiempoOrden: '5 años',
     reconocimientos: 'Líder Destacado de Gestión 2025, Distinción al Mérito DeMolay.',
@@ -98,7 +98,7 @@ const gabineteData = [
     cargos: 'Segundo Consejero, Escriba Departamental.',
     capituloMadre: 'Cantera 75024',
     grado: 'Sir',
-    tiempoOrden: '4 Años en DM',
+    tiempoOrden: '4 Años',
     reconocimientos: 'Escritor del Manual de Historia Capitular para Cantera, Creador del Taller de Escribas II-2026, Mejor GINI I-2024, ⁠Reconocimiento al Mérito I-2026, Mejor Escriba II-2024 del campamento',
     fraseMotivadora: 'Que un momento difícil no cambie tu manera de pensar.'
   },
@@ -108,12 +108,12 @@ const gabineteData = [
     term: 'Gestión 2026',
     chapter: 'Capítulo Cantera',
     image: imgSaucedo,
-    cargos: 'Tesorero Departamental, Ex Escriba Capitular.',
-    capituloMadre: 'Capítulo Cantera',
+    cargos: 'Tesorero Departamental, Maestre Consejero, 1er Consejero y Escriba Capitular.',
+    capituloMadre: 'Capítulo Cantera 75024',
     grado: 'Sir',
     tiempoOrden: '3 años',
-    reconocimientos: 'Gestor de Proyectos de Transparencia Financiera.',
-    fraseMotivadora: 'La transparencia y la responsabilidad en el servicio son el reflejo de nuestro carácter.'
+    reconocimientos: 'Campeonato ded futbol DeMolay gestion II-2025.',
+    fraseMotivadora: 'Al final todo estará bien, y si no está bien, no hemos llegado al final.'
   },
   {
     name: 'H. Bruno Bonanken',
@@ -121,12 +121,12 @@ const gabineteData = [
     term: 'Gestión 2026',
     chapter: 'Capítulo Amistad Y Fidelidad',
     image: imgBonanken,
-    cargos: 'Orador Departamental, Ex Maestre Consejero.',
+    cargos: 'Orador Departamental, Maestre Consejero Capitular y Ilustre Comendador Caballero de Priorato.',
     capituloMadre: 'Capítulo Amistad Y Fidelidad',
-    grado: 'Chevalier',
-    tiempoOrden: '4 años',
-    reconocimientos: 'Campeón Departamental de Oratoria Ritualística 2025.',
-    fraseMotivadora: 'Que nuestras palabras sean el fiel reflejo de las virtudes que juramos defender.'
+    grado: 'Sir',
+    tiempoOrden: 'años',
+    reconocimientos: '',
+    fraseMotivadora: ''
   },
   {
     name: 'H. Alviery Anas',
@@ -147,12 +147,12 @@ const gabineteData = [
     term: 'Gestión 2026',
     chapter: 'Capítulo Primax Santa Cruz 294',
     image: imgGuardia,
-    cargos: 'Inspector Ritualístico Departamental, Ex Maestre Consejero.',
+    cargos: 'Inspector Ritualístico Departamental, Maestre Consejero y 1er Consejero Capitular.',
     capituloMadre: 'Capítulo Primax Santa Cruz 294',
-    grado: 'Past MC, Chevalier',
-    tiempoOrden: '5 años',
-    reconocimientos: 'Premio a la Excelencia en Ejecución Ceremonial.',
-    fraseMotivadora: 'El ritual no es solo forma, es el alma y la esencia que transmite nuestras enseñanzas.'
+    grado: 'Sir',
+    tiempoOrden: 'años',
+    reconocimientos: '',
+    fraseMotivadora: ''
   },
   {
     name: 'H. Matias Montaño',
@@ -160,12 +160,12 @@ const gabineteData = [
     term: 'Gestión 2026',
     chapter: 'Capítulo Primax Santa Cruz 294',
     image: imgMontano,
-    cargos: 'Inspector de las Columnas del Sur.',
+    cargos: 'Inspector de las Columnas del Sur y 1er Consejero Capitular.',
     capituloMadre: 'Capítulo Primax Santa Cruz 294',
     grado: 'Sir',
-    tiempoOrden: '3 años',
-    reconocimientos: 'Promotor del Crecimiento de Capítulos del Eje Sur.',
-    fraseMotivadora: 'Fortalecer las columnas del templo es asegurar el futuro de la hermandad.'
+    tiempoOrden: 'años',
+    reconocimientos: '',
+    fraseMotivadora: ''
   },
   {
     name: 'H. Roberto Roca',
@@ -173,12 +173,12 @@ const gabineteData = [
     term: 'Gestión 2026',
     chapter: 'Capítulo Grigota 476',
     image: imgRoca,
-    cargos: 'Director Inter-Capitular Departamental, Maestre Consejero de Grigota.',
+    cargos: 'Director Inter-Capitular Departamental, Maestre Consejero y 1er Consejero Capitular.',
     capituloMadre: 'Capítulo Grigota 476',
     grado: 'Sir',
-    tiempoOrden: '4 años',
-    reconocimientos: 'Organizador Destacado de los Encuentros Deportivos y de Liderazgo 2026.',
-    fraseMotivadora: 'La unión hace la fuerza, y el trabajo conjunto hace brillar nuestro departamento.'
+    tiempoOrden: 'años',
+    reconocimientos: '',
+    fraseMotivadora: ''
   },
   {
     name: 'Lord. Luis Cruz',
@@ -190,8 +190,8 @@ const gabineteData = [
     capituloMadre: 'Capítulo Cantera',
     grado: 'Lord',
     tiempoOrden: '12 años',
-    reconocimientos: 'Creador de las Guías Didácticas de Capacitación e Instrucción DeMolay 2026.',
-    fraseMotivadora: 'El conocimiento y la instrucción constante son las herramientas para guiar con éxito.'
+    reconocimientos: 'Grado Chevalier en el año 2026',
+    fraseMotivadora: 'El segundo es el primero de los perdedores'
   },
   {
     name: 'H. Jose Alberto Vargas',
@@ -203,7 +203,7 @@ const gabineteData = [
     capituloMadre: 'Cantera 75024',
     grado: 'Sir',
     tiempoOrden: '2 años',
-    reconocimientos: 'Creador de la Identidad Visual y Arte Gráfico de la Oficialía 2026.',
+    reconocimientos: 'Creador de la Pagina Web y Arte Gráfico del Campamento de Santa Cruz 2026. ',
     fraseMotivadora: 'Que todo fluya y nada influya'
   }
 ];
@@ -434,6 +434,50 @@ function CabinetMemberCard({ leader }) {
   );
 }
 
+function ActualLeaderCard({ leader }) {
+  return (
+    <div className="bg-white rounded-xl border border-stone-200 p-6 shadow-sm hover:shadow-xl hover:border-gold transition-all duration-300 group flex flex-col justify-between hover-premium-card h-full">
+      <div>
+        {/* Portrait Placeholder Card inside */}
+        <div className="aspect-square w-full bg-stone-100 rounded-lg border border-stone-200 flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-stone-50 transition-colors">
+          <div className="absolute top-0 right-0 bg-gold/20 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-[8px] font-bold uppercase tracking-widest text-gold z-10">
+            Activo
+          </div>
+          {leader.image ? (
+            <img
+              src={leader.image}
+              alt={leader.name}
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <svg viewBox="0 0 100 100" className="w-16 h-16 text-stone-400 fill-current opacity-85 group-hover:text-demolay-green-900/60 transition-colors">
+              <path d="M50 50c9.333 0 14-4.667 14-14s-4.667-14-14-14-14 4.667-14 14 4.667 14 14 14zm0 6c-13.333 0-20 6.667-20 20v2h40v-2c0-13.333-6.667-20-20-20z" />
+            </svg>
+          )}
+        </div>
+
+        <span className="text-[9px] font-bold text-demolay-green bg-demolay-green-900/10 px-2 py-0.5 rounded border border-demolay-green/20 tracking-wider uppercase inline-block mb-2">
+          {leader.role}
+        </span>
+        <h3 className="font-serif font-bold text-lg text-demolay-green-950 mb-1 leading-tight group-hover:text-demolay-green-900 transition-colors">
+          {leader.name}
+        </h3>
+      </div>
+
+      <div className="mt-4 pt-3 border-t border-stone-100 flex flex-col gap-1.5 font-sans text-left">
+        <div className="flex items-start gap-1.5 text-xs sm:text-[13px] font-semibold text-demolay-green-950 leading-snug">
+          <Shield className="h-4 w-4 text-demolay-green shrink-0 mt-0.5" />
+          <span>{leader.chapter}</span>
+        </div>
+        <div className="flex items-center justify-between text-[11px] text-stone-500 font-medium pl-5.5">
+          <span className="text-[10px] uppercase tracking-wider text-stone-400 font-bold">Gestión</span>
+          <span className="font-semibold text-stone-600">{leader.term}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ExternalLeaderCard({ leader }) {
   const badge = leader.badge || 'Cuerpo de Honor';
 
@@ -482,8 +526,17 @@ function ExternalLeaderCard({ leader }) {
 
 export default function CabinetTabs() {
   const [activeTab, setActiveTab] = useState('actuales');
+  const [actualesIndex, setActualesIndex] = useState(0);
   const [gabineteIndex, setGabineteIndex] = useState(0);
   const [externasIndex, setExternasIndex] = useState(0);
+
+  const nextActuales = () => {
+    setActualesIndex((prev) => (prev + 1) % actualesData.length);
+  };
+
+  const prevActuales = () => {
+    setActualesIndex((prev) => (prev - 1 + actualesData.length) % actualesData.length);
+  };
 
   const nextGabinete = () => {
     setGabineteIndex((prev) => (prev + 1) % gabineteData.length);
@@ -559,53 +612,52 @@ export default function CabinetTabs() {
         {/* Grid Contents */}
         <div className="transition-all duration-300">
           {activeTab === 'actuales' && (
-            /* Maestres Consejeros Actuales Grid */
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
-              {actualesData.map((leader, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl border border-stone-200 p-6 shadow-sm hover:shadow-xl hover:border-gold transition-all duration-300 group flex flex-col justify-between hover-premium-card"
-                >
-                  <div>
-                    {/* Portrait Placeholder Card inside */}
-                    <div className="aspect-square w-full bg-stone-100 rounded-lg border border-stone-200 flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-stone-50 transition-colors">
-                      <div className="absolute top-0 right-0 bg-gold/20 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-[8px] font-bold uppercase tracking-widest text-gold z-10">
-                        Activo
-                      </div>
-                      {leader.image ? (
-                        <img
-                          src={leader.image}
-                          alt={leader.name}
-                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                        />
-                      ) : (
-                        <svg viewBox="0 0 100 100" className="w-16 h-16 text-stone-400 fill-current opacity-85 group-hover:text-demolay-green-900/60 transition-colors">
-                          <path d="M50 50c9.333 0 14-4.667 14-14s-4.667-14-14-14-14 4.667-14 14 4.667 14 14 14zm0 6c-13.333 0-20 6.667-20 20v2h40v-2c0-13.333-6.667-20-20-20z" />
-                        </svg>
-                      )}
-                    </div>
+            /* Maestres Consejeros Actuales (Carousel on mobile, Grid on desktop) */
+            <>
+              {/* Desktop Grid (sm:grid) */}
+              <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
+                {actualesData.map((leader, index) => (
+                  <ActualLeaderCard key={index} leader={leader} />
+                ))}
+              </div>
 
-                    <span className="text-[9px] font-bold text-demolay-green bg-demolay-green-900/10 px-2 py-0.5 rounded border border-demolay-green/20 tracking-wider uppercase inline-block mb-2">
-                      {leader.role}
-                    </span>
-                    <h3 className="font-serif font-bold text-lg text-demolay-green-950 mb-1 leading-tight group-hover:text-demolay-green-900 transition-colors">
-                      {leader.name}
-                    </h3>
+              {/* Mobile Carousel (sm:hidden) */}
+              <div className="sm:hidden relative max-w-sm mx-auto animate-fade-in">
+                <ActualLeaderCard leader={actualesData[actualesIndex]} />
+
+                {/* Navigation Controls */}
+                <div className="flex items-center justify-between mt-4 px-2">
+                  <button
+                    onClick={prevActuales}
+                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
+                    aria-label="Anterior"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+
+                  {/* Pagination Dots */}
+                  <div className="flex gap-1.5 flex-wrap justify-center max-w-[200px]">
+                    {actualesData.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActualesIndex(idx)}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${actualesIndex === idx ? 'w-5 bg-demolay-gold' : 'w-1.5 bg-stone-300'
+                          }`}
+                        aria-label={`Miembro ${idx + 1}`}
+                      />
+                    ))}
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-stone-100 flex flex-col gap-1.5 font-sans text-left">
-                    <div className="flex items-start gap-1.5 text-xs sm:text-[13px] font-semibold text-demolay-green-950 leading-snug">
-                      <Shield className="h-4 w-4 text-demolay-green shrink-0 mt-0.5" />
-                      <span>{leader.chapter}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[11px] text-stone-500 font-medium pl-5.5">
-                      <span className="text-[10px] uppercase tracking-wider text-stone-400 font-bold">Gestión</span>
-                      <span className="font-semibold text-stone-600">{leader.term}</span>
-                    </div>
-                  </div>
+                  <button
+                    onClick={nextActuales}
+                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
+                    aria-label="Siguiente"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
                 </div>
-              ))}
-            </div>
+              </div>
+            </>
           )}
 
           {activeTab === 'gabinete' && (

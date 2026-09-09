@@ -66,21 +66,21 @@ export default function Footer({ onOpenDevelopers }) {
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-demolay-gold shrink-0" />
                 <a
-                  href="mailto:gabinetedepartamentalcampament@gmail.com"
+                  href="mailto:asf102016@gmail.com"
                   className="hover:text-demolay-gold transition-colors font-medium"
                 >
-                  gabinetedepartamentalcampament@gmail.com
+                  asf102016@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Globe className="h-4 w-4 text-demolay-gold shrink-0" />
                 <a
-                  href="https://www.demolaysantacruz.org"
+                  href="https://demolayscz.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-demolay-gold transition-colors font-medium"
                 >
-                  www.demolaysantacruz.org
+                  demolayscz.com
                 </a>
               </li>
               <li className="flex items-center gap-2">

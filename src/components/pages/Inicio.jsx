@@ -170,6 +170,8 @@ export default function Inicio() {
                 <img 
                   src={imgLand} 
                   alt="Frank S. Land" 
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-auto object-contain" 
                 />
               </div>
@@ -214,6 +216,8 @@ export default function Inicio() {
                 <img 
                   src={imgJaques} 
                   alt="Jacques de Molay" 
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-auto object-contain" 
                 />
               </div>

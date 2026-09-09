@@ -124,7 +124,7 @@ export default function CapitulosListPage({ onBack }) {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gold/10 rounded-full blur-md" />
                     <div className="relative h-16 w-16 bg-stone-900/5 border border-gold/35 rounded-xl flex items-center justify-center overflow-hidden p-2 transition-all duration-300">
-                      <img src={cap.logo} alt={cap.name} className="h-full w-full object-contain" />
+                      <img src={cap.logo} alt={cap.name} loading="lazy" decoding="async" className="h-full w-full object-contain" />
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-1 font-sans text-right">

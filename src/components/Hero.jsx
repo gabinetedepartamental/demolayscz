@@ -1,7 +1,6 @@
 import React from 'react';
 import { Compass, BookOpen, ChevronDown } from 'lucide-react';
 import logo from '../assets/images/logo1.png';
-import logoPattern from '../assets/images/escudod.svg';
 
 export default function Hero({ onPageChange }) {
   const handlePageTransition = (id) => {
@@ -19,7 +18,7 @@ export default function Hero({ onPageChange }) {
           <pattern id="shield-pattern" width="280" height="280" patternUnits="userSpaceOnUse" x="0" y="0">
             <animate attributeName="x" from="0" to="280" dur="40s" repeatCount="indefinite" />
             <animate attributeName="y" from="0" to="280" dur="40s" repeatCount="indefinite" />
-            <image href={logoPattern} x="70" y="70" width="140" height="140" />
+            <image href={logo} x="70" y="70" width="140" height="140" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#shield-pattern)" />

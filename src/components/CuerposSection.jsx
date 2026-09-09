@@ -99,6 +99,8 @@ export default function CuerposSection({ onOpenDetails }) {
         <img
           src={cuerpo.logo}
           alt={cuerpo.title}
+          loading="lazy"
+          decoding="async"
           className="h-10 w-10 object-contain"
         />
       );

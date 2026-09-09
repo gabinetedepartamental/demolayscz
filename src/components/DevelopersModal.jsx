@@ -126,6 +126,8 @@ export default function DevelopersModal({ isOpen, onClose }) {
                         <img
                           src={dev.image}
                           alt={dev.name}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover rounded-lg"
                         />
                       </div>

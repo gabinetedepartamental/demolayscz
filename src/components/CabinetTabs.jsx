@@ -296,6 +296,8 @@ function CabinetMemberCard({ leader }) {
                 <img
                   src={leader.image}
                   alt={leader.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
               ) : (
@@ -447,6 +449,8 @@ function ActualLeaderCard({ leader }) {
             <img
               src={leader.image}
               alt={leader.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
@@ -493,6 +497,8 @@ function ExternalLeaderCard({ leader }) {
             <img
               src={leader.image}
               alt={leader.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
           ) : (

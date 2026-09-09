@@ -23,7 +23,7 @@ const documents = [
     type: 'PDF • Caballería',
     category: 'Caballería',
     requiredGrade: 'Caballero',
-    size: '4.9 MB',
+    size: '3.7 MB',
     fileUrl: '/materiales/Manual de Instrucción del Grado Caballero SC.pdf',
     content: 'Manual oficial de formación e instrucción ceremonial para el Grado de Caballero en el Campamento de Santa Cruz. Incluye el estudio de las Capillas de la Caballería Moral, la lealtad templaria, deberes del Sir Caballero y la estructura de investidura.'
   },
@@ -56,7 +56,7 @@ const documents = [
     type: 'PDF • Histórico & Biográfico',
     category: 'Público',
     requiredGrade: 'Público',
-    size: '26.9 MB',
+    size: '2.2 MB',
     fileUrl: '/materiales/Hi Dad - una historia sobre Frank Land.pdf',
     content: 'Obra biográfica e histórica completa sobre Frank Sherman Land ("Dad Land"), fundador de la Orden DeMolay. Un relato inspirador sobre el nacimiento de la Orden en 1919 en Kansas City, los primeros nueve jóvenes fundadores y el legado de fraternidad universal.'
   }

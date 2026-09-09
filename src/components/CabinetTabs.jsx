@@ -210,7 +210,7 @@ const gabineteData = [
 
 const externasData = [
   {
-    name: 'Chevalier Adolfo Sotelo',
+    name: 'Lord Adolfo Sotelo',
     office: 'Gran Comendador Chevalier',
     term: 'Gestión 2026',
     chapter: 'Corte Chevalier "Nobles Defensores" N° 75904',
@@ -593,6 +593,16 @@ export default function CabinetTabs() {
               M.C. Actuales (Capítulos)
             </button>
             <button
+              onClick={() => setActiveTab('externas')}
+              className={`w-full sm:w-auto px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 ${activeTab === 'externas'
+                ? 'bg-demolay-green-900 text-stone-100 shadow'
+                : 'text-stone-600 hover:text-demolay-green-900'
+                }`}
+            >
+              <Swords className="h-4 w-4 text-gold" />
+              Autoridades de Otros Cuerpos
+            </button>
+            <button
               onClick={() => setActiveTab('gabinete')}
               className={`w-full sm:w-auto px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 ${activeTab === 'gabinete'
                 ? 'bg-demolay-green-900 text-stone-100 shadow'
@@ -601,16 +611,6 @@ export default function CabinetTabs() {
             >
               <Shield className="h-4 w-4 text-gold" />
               Gabinete Departamental
-            </button>
-            <button
-              onClick={() => setActiveTab('externas')}
-              className={`w-full sm:w-auto px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 ${activeTab === 'externas'
-                ? 'bg-demolay-green-900 text-stone-100 shadow'
-                : 'text-stone-600 hover:text-demolay-green-900'
-                }`}
-            >
-              <Swords className="h-4 w-4 text-gold" />
-              Autoridades Externas
             </button>
           </div>
         </div>
@@ -666,6 +666,55 @@ export default function CabinetTabs() {
             </>
           )}
 
+          {activeTab === 'externas' && (
+            /* Autoridades de Otros Cuerpos (Carousel on mobile, Grid on desktop) */
+            <>
+              {/* Desktop Grid (sm:grid) */}
+              <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
+                {externasData.map((leader, index) => (
+                  <ExternalLeaderCard key={index} leader={leader} />
+                ))}
+              </div>
+
+              {/* Mobile Carousel (sm:hidden) */}
+              <div className="sm:hidden relative max-w-sm mx-auto animate-fade-in">
+                <ExternalLeaderCard leader={externasData[externasIndex]} />
+
+                {/* Navigation Controls */}
+                <div className="flex items-center justify-between mt-4 px-2">
+                  <button
+                    onClick={prevExternas}
+                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
+                    aria-label="Anterior"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+
+                  {/* Pagination Dots */}
+                  <div className="flex gap-1.5 flex-wrap justify-center max-w-[200px]">
+                    {externasData.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setExternasIndex(idx)}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${externasIndex === idx ? 'w-5 bg-demolay-gold' : 'w-1.5 bg-stone-300'
+                          }`}
+                        aria-label={`Miembro ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={nextExternas}
+                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
+                    aria-label="Siguiente"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+
           {activeTab === 'gabinete' && (
             /* Gabinete Departamental (Carousel on mobile, Grid on desktop) */
             <>
@@ -705,55 +754,6 @@ export default function CabinetTabs() {
 
                   <button
                     onClick={nextGabinete}
-                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
-                    aria-label="Siguiente"
-                  >
-                    <ChevronRight className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
-
-          {activeTab === 'externas' && (
-            /* Autoridades Externas (Carousel on mobile, Grid on desktop) */
-            <>
-              {/* Desktop Grid (sm:grid) */}
-              <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
-                {externasData.map((leader, index) => (
-                  <ExternalLeaderCard key={index} leader={leader} />
-                ))}
-              </div>
-
-              {/* Mobile Carousel (sm:hidden) */}
-              <div className="sm:hidden relative max-w-sm mx-auto animate-fade-in">
-                <ExternalLeaderCard leader={externasData[externasIndex]} />
-
-                {/* Navigation Controls */}
-                <div className="flex items-center justify-between mt-4 px-2">
-                  <button
-                    onClick={prevExternas}
-                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
-                    aria-label="Anterior"
-                  >
-                    <ChevronLeft className="h-5 w-5" />
-                  </button>
-
-                  {/* Pagination Dots */}
-                  <div className="flex gap-1.5 flex-wrap justify-center max-w-[200px]">
-                    {externasData.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setExternasIndex(idx)}
-                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${externasIndex === idx ? 'w-5 bg-demolay-gold' : 'w-1.5 bg-stone-300'
-                          }`}
-                        aria-label={`Miembro ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={nextExternas}
                     className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
                     aria-label="Siguiente"
                   >

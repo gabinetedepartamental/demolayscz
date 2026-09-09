@@ -66,7 +66,7 @@ const mcdsData = [
     year: '2018',
     name: 'Diego Otero',
     hometown: 'Santa Cruz de la Sierra',
-    chapter: 'Gran Paititi 540 (#75007)',
+    chapter: 'Primax Santa Cruz 294 (#75009)',
     achievements: 'Coordinación académica regional y fomento de los principios fundamentales de la orden.',
     motto: 'Excelencia y Virtud'
   },

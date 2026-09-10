@@ -26,7 +26,7 @@ export default function Navbar({ currentPage, onPageChange }) {
   };
 
   return (
-    <nav className="sticky top-0 z-45 bg-demolay-green-950/95 border-b border-demolay-gold/30 backdrop-blur-md transition-all duration-300">
+    <nav className="sticky top-0 z-40 w-full bg-demolay-green-950/95 border-b border-demolay-gold/30 backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Users, Award, Star, ChevronLeft, ChevronRight, RotateCw, Clock, Quote, Swords, Gem } from 'lucide-react';
+import { Shield, Users, Award, Star, ChevronLeft, ChevronRight, RotateCw, Clock, Quote, Swords, Gem, Landmark } from 'lucide-react';
 
 import imgSandoval from '../assets/images/autoridades/sandoval.jpeg';
 import imgArchanjo from '../assets/images/autoridades/archanjo.jpeg';
@@ -267,6 +267,21 @@ const externasData = [
   }
 ];
 
+const oficialiaData = [
+  {
+    name: 'Tío Antonio Pacheco Mendez',
+    office: 'Oficial Ejecutivo',
+    badge: 'DeMolay Bolivia',
+    image: null
+  },
+  {
+    name: 'Tío Christian López',
+    office: 'Delegado Regional de Santa Cruz',
+    badge: 'Santa Cruz',
+    image: null
+  }
+];
+
 function CabinetMemberCard({ leader }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const badge = leader.badge || 'Gabinete';
@@ -530,11 +545,66 @@ function ExternalLeaderCard({ leader }) {
   );
 }
 
+function AdvisorCard({ leader }) {
+  const badge = leader.badge || 'Autoridad Adulta';
+
+  return (
+    <div className="bg-white rounded-xl border border-stone-200 p-6 shadow-sm hover:shadow-xl hover:border-gold transition-all duration-300 group flex flex-col justify-between hover-premium-card h-full">
+      <div>
+        {/* Portrait Card */}
+        <div className="aspect-square w-full bg-stone-100 rounded-lg border border-stone-200 flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-stone-50 transition-colors">
+          <div className="absolute top-0 right-0 bg-demolay-green-950 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-[8px] font-bold uppercase tracking-widest z-10">
+            {badge}
+          </div>
+          {leader.image ? (
+            <img
+              src={leader.image}
+              alt={leader.name}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center text-stone-400 group-hover:text-demolay-green-900/60 transition-colors p-4">
+              <svg viewBox="0 0 100 100" className="w-20 h-20 fill-current opacity-85">
+                <path d="M50 50c9.333 0 14-4.667 14-14s-4.667-14-14-14-14 4.667-14 14 4.667 14 14 14zm0 6c-13.333 0-20 6.667-20 20v2h40v-2c0-13.333-6.667-20-20-20z" />
+              </svg>
+            </div>
+          )}
+        </div>
+
+        <span className="text-[9px] font-bold text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30 tracking-wider uppercase inline-block mb-2">
+          {leader.badge}
+        </span>
+        <h3 className="font-serif font-bold text-xl text-demolay-green-950 mb-1 leading-tight group-hover:text-demolay-green-900 transition-colors">
+          {leader.name}
+        </h3>
+      </div>
+
+      <div className="mt-4 pt-3 border-t border-stone-100 flex flex-col gap-1.5 font-sans text-left">
+        <div className="flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-demolay-green-950 leading-snug">
+          <Landmark className="h-4 w-4 text-gold shrink-0" />
+          <span>{leader.office}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function CabinetTabs() {
   const [activeTab, setActiveTab] = useState('actuales');
   const [actualesIndex, setActualesIndex] = useState(0);
   const [gabineteIndex, setGabineteIndex] = useState(0);
   const [externasIndex, setExternasIndex] = useState(0);
+  const [oficialiaIndex, setOficialiaIndex] = useState(0);
+
+  const nextOficialia = () => {
+    setOficialiaIndex((prev) => (prev + 1) % oficialiaData.length);
+  };
+
+  const prevOficialia = () => {
+    setOficialiaIndex((prev) => (prev - 1 + oficialiaData.length) % oficialiaData.length);
+  };
 
   const nextActuales = () => {
     setActualesIndex((prev) => (prev + 1) % actualesData.length);
@@ -581,7 +651,17 @@ export default function CabinetTabs() {
 
         {/* Responsive Tab Switcher */}
         <div className="flex justify-center mb-12 px-4">
-          <div className="flex flex-col sm:flex-row p-1.5 rounded-xl bg-stone-200 border border-stone-300 shadow-inner w-full max-w-2xl sm:w-auto gap-1 sm:gap-0">
+          <div className="flex flex-col sm:flex-row p-1.5 rounded-xl bg-stone-200 border border-stone-300 shadow-inner w-full max-w-4xl sm:w-auto gap-1 sm:gap-0 flex-wrap justify-center">
+            <button
+              onClick={() => setActiveTab('oficialia')}
+              className={`w-full sm:w-auto px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 ${activeTab === 'oficialia'
+                ? 'bg-demolay-green-900 text-stone-100 shadow'
+                : 'text-stone-600 hover:text-demolay-green-900'
+                }`}
+            >
+              <Landmark className="h-4 w-4 text-gold" />
+              Oficialía & Delegación
+            </button>
             <button
               onClick={() => setActiveTab('actuales')}
               className={`w-full sm:w-auto px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 ${activeTab === 'actuales'
@@ -617,6 +697,55 @@ export default function CabinetTabs() {
 
         {/* Grid Contents */}
         <div className="transition-all duration-300">
+          {activeTab === 'oficialia' && (
+            /* Oficialía & Delegación */
+            <>
+              {/* Desktop Grid (sm:grid) */}
+              <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in">
+                {oficialiaData.map((leader, index) => (
+                  <AdvisorCard key={index} leader={leader} />
+                ))}
+              </div>
+
+              {/* Mobile Carousel (sm:hidden) */}
+              <div className="sm:hidden relative max-w-sm mx-auto animate-fade-in">
+                <AdvisorCard leader={oficialiaData[oficialiaIndex]} />
+
+                {/* Navigation Controls */}
+                <div className="flex items-center justify-between mt-4 px-2">
+                  <button
+                    onClick={prevOficialia}
+                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
+                    aria-label="Anterior"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+
+                  {/* Pagination Dots */}
+                  <div className="flex gap-1.5 flex-wrap justify-center max-w-[200px]">
+                    {oficialiaData.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setOficialiaIndex(idx)}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${oficialiaIndex === idx ? 'w-5 bg-demolay-gold' : 'w-1.5 bg-stone-300'
+                          }`}
+                        aria-label={`Miembro ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={nextOficialia}
+                    className="p-2 rounded-full bg-white border border-stone-200 text-stone-700 hover:text-demolay-gold hover:border-demolay-gold active:scale-95 transition-all shadow cursor-pointer"
+                    aria-label="Siguiente"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+
           {activeTab === 'actuales' && (
             /* Maestres Consejeros Actuales (Carousel on mobile, Grid on desktop) */
             <>

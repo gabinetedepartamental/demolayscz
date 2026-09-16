@@ -1,14 +1,9 @@
 # Carpeta de Materiales Oficiales (PDFs)
 
-Coloca aquí todos los archivos `.pdf` que quieras incluir en la sección de **Materiales y Manuales Oficiales**.
+Coloca aquí únicamente archivos `.pdf` de **acceso público y bibliográfico** (como biografías e historia oficial).
 
-### Cómo funciona:
-Los archivos colocados en esta carpeta estarán disponibles directamente en la aplicación a través de la ruta `/materiales/nombre-del-archivo.pdf`.
+> ⚠️ **Nota de privacidad:** Los rituales y manuales reservados de grado no deben subirse a este repositorio público.
 
-### Organización por Grados:
-Posteriormente podemos categorizarlos según su grado de acceso:
-- **Público** (Acceso libre)
-- **Iniciático** (Grado Iniciático)
-- **DeMolay** (Grado DeMolay)
-- **Caballero** (Caballería)
-- **Chevalier / Asesores**
+### Archivos actuales:
+- `Hi Dad - una historia sobre Frank Land.pdf` (Obra biográfica pública de Frank S. Land)
+

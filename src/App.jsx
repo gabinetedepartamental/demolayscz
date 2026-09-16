@@ -9,7 +9,7 @@ import DevelopersModal from './components/DevelopersModal';
 import Inicio from './components/pages/Inicio';
 import MuralesPage from './components/pages/MuralesPage';
 import CuerposPage from './components/pages/CuerposPage';
-// import FilantropiasPage from './components/pages/FilantropiasPage';
+import FilantropiasPage from './components/pages/FilantropiasPage';
 import ReconocimientosPage from './components/pages/ReconocimientosPage';
 import MaterialesPage from './components/pages/MaterialesPage';
 import CapitulosListPage from './components/pages/CapitulosListPage';
@@ -28,8 +28,8 @@ export default function App() {
         return <MuralesPage />;
       case 'cuerpos':
         return <CuerposPage onOpenDetails={(body) => setActiveCuerpoDetail(body)} />;
-      // case 'filantropias':
-      //   return <FilantropiasPage />;
+      case 'filantropias':
+        return <FilantropiasPage />;
       case 'reconocimientos':
         return <ReconocimientosPage />;
       case 'materiales':

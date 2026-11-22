@@ -88,6 +88,10 @@ export default function FilantropiasPage() {
     'Hola, me comunico desde la web oficial de DeMolay Santa Cruz. Deseo hacer un pedido de juguetes para perros de la Filantropía DeMolay & Bolivia Shriners (1 x 40 Bs / 3 x 100 Bs).'
   )}`;
 
+  const tapatonWhatsappUrl = `https://wa.me/591${departamentalCampaign.phone}?text=${encodeURIComponent(
+    'Hola, me comunico desde la web oficial de DeMolay Santa Cruz. Quiero información sobre la campaña "Juntos por el Tapatón" para entregar tapas.'
+  )}`;
+
   return (
     <div className="animate-fade-in bg-stone-50 min-h-screen">
 
@@ -342,6 +346,27 @@ export default function FilantropiasPage() {
                   </div>
                 </div>
               </div>
+
+              {tapatonActive && (
+                <div className="mt-6 pt-5 border-t border-stone-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                  <div>
+                    <span className="block text-xs uppercase font-bold tracking-wider text-stone-400">Consultas y coordinación:</span>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      <Phone className="h-4 w-4 text-emerald-600" />
+                      <span className="font-mono text-lg font-bold text-demolay-green-950">{departamentalCampaign.phone}</span>
+                    </div>
+                  </div>
+                  <a
+                    href={tapatonWhatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 py-3.5 px-6 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors duration-150 shadow-lg cursor-pointer text-center"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    <span>Escribir por WhatsApp</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

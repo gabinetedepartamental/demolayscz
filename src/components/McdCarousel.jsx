@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, ChevronLeft, ChevronRight, Award } from 'lucide-react';
 import imgSandoval from '../assets/images/autoridades/sandoval.jpeg';
-import imgSotelo from '../assets/images/mcd/sotelo.jpeg';
+import imgSotelo from '../assets/images/mcd/sotelo.webp';
 import imgMcd0 from '../assets/images/mcd/montenegro.jpeg';
-import imgMcd1 from '../assets/images/mcd/vicet.jpeg';
-import imgMcd2 from '../assets/images/mcd/melgar.jpeg';
-import imgMcd3 from '../assets/images/mcd/ivan.jpeg';
-import imgMcd4 from '../assets/images/mcd/arze.jpeg';
-import imgMcd5 from '../assets/images/mcd/otero.jpeg';
-import imgMcd6 from '../assets/images/mcd/rau.jpg';
-import imgMcd7 from '../assets/images/mcd/rivero.jpeg';
-import imgMcd8 from '../assets/images/mcd/palma.jpeg';
-import imgMcd9 from '../assets/images/mcd/carlos asbun.jpeg';
-import imgMcd10 from '../assets/images/mcd/wilson mendieta.jpeg';
-import imgMcd11 from '../assets/images/mcd/sanjines.jpeg';
-import imgMcd12 from '../assets/images/mcd/andres aguilera.jpeg';
-import imgMcd13 from '../assets/images/mcd/pantoja.jpeg';
-import imgMcd14 from '../assets/images/mcd/moreira.jpeg';
-import imgMcd15 from '../assets/images/mcd/salinas.jpg';
+import imgMcd1 from '../assets/images/mcd/vicet.webp';
+import imgMcd2 from '../assets/images/mcd/melgar.webp';
+import imgMcd3 from '../assets/images/mcd/ivan.webp';
+import imgMcd4 from '../assets/images/mcd/arze.webp';
+import imgMcd5 from '../assets/images/mcd/otero.webp';
+import imgMcd6 from '../assets/images/mcd/rau.webp';
+import imgMcd7 from '../assets/images/mcd/rivero.webp';
+import imgMcd8 from '../assets/images/mcd/palma.webp';
+import imgMcd9 from '../assets/images/mcd/carlos asbun.webp';
+import imgMcd10 from '../assets/images/mcd/wilson mendieta.webp';
+import imgMcd11 from '../assets/images/mcd/sanjines.webp';
+import imgMcd12 from '../assets/images/mcd/andres aguilera.webp';
+import imgMcd13 from '../assets/images/mcd/pantoja.webp';
+import imgMcd14 from '../assets/images/mcd/moreira.webp';
+import imgMcd15 from '../assets/images/mcd/salinas.webp';
 import imgMcd16 from '../assets/images/mcd/alcoba.jpg';
-import imgMcd17 from '../assets/images/mcd/herrera.jpeg';
-import imgMcd18 from '../assets/images/mcd/saavedra.jpeg';
-import imgMcd19 from '../assets/images/mcd/carlos sandoval.jpeg';
-import imgMonroy from '../assets/images/mcd/monroy.jpg';
+import imgMcd17 from '../assets/images/mcd/herrera.webp';
+import imgMcd18 from '../assets/images/mcd/saavedra.webp';
+import imgMcd19 from '../assets/images/mcd/carlos sandoval.webp';
+import imgMonroy from '../assets/images/mcd/monroy.webp';
 
 const mcdsData = [
   {

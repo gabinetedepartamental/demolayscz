@@ -364,7 +364,7 @@ export default function McdCarousel() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-6">
+          <div className="hidden md:block absolute top-1/2 -translate-y-1/2 md:-left-6">
             <button
               onClick={handlePrev}
               className="p-3 rounded-full bg-white border border-stone-200 hover:border-demolay-gold text-stone-700 hover:text-demolay-gold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
@@ -374,7 +374,7 @@ export default function McdCarousel() {
             </button>
           </div>
 
-          <div className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-6">
+          <div className="hidden md:block absolute top-1/2 -translate-y-1/2 md:-right-6">
             <button
               onClick={handleNext}
               className="p-3 rounded-full bg-white border border-stone-200 hover:border-demolay-gold text-stone-700 hover:text-demolay-gold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"

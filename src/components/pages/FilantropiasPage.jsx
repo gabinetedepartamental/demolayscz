@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { 
-  Heart, 
-  HandHeart, 
-  Sparkles, 
-  Phone, 
-  MessageCircle, 
-  Copy, 
-  Check, 
-  Download, 
-  Eye, 
-  X, 
-  Gift, 
-  ShieldCheck, 
-  Users, 
+import {
+  Heart,
+  HandHeart,
+  Sparkles,
+  Phone,
+  MessageCircle,
+  Copy,
+  Check,
+  Download,
+  Eye,
+  X,
+  Gift,
+  ShieldCheck,
+  Users,
   Calendar,
   Clock,
   ExternalLink,
@@ -29,10 +29,16 @@ import logoPaititi from '../../assets/images/logos/paititi.jpeg';
 import logoAyf from '../../assets/images/logos/ayf.png';
 import logoCna from '../../assets/images/logos/cna.jpeg';
 import logoCantera from '../../assets/images/logos/cantera.png';
+import flyerTapaton from '../../assets/images/filantropia/tapaton.png';
+
+// Fin del Tapatón: termina al acabar el 12/12/2026 (hora Bolivia, UTC-4)
+const TAPATON_END = new Date('2026-12-13T00:00:00-04:00');
 
 export default function FilantropiasPage() {
-  const [isFlyerModalOpen, setIsFlyerModalOpen] = useState(false);
+  // null = cerrado; si no, { img, title } del flyer a mostrar
+  const [modalFlyer, setModalFlyer] = useState(null);
   const [copiedPhone, setCopiedPhone] = useState(false);
+  const tapatonActive = new Date() < TAPATON_END;
 
   // Filantropía Departamental Activa (Juguetes para Perros con Bolivia Shriners)
   const departamentalCampaign = {
@@ -82,10 +88,10 @@ export default function FilantropiasPage() {
 
   return (
     <div className="animate-fade-in bg-stone-50 min-h-screen">
-      
+
       {/* 1. Featured Departmental Philanthropy Card */}
       <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Heading Badge */}
         <div className="flex items-center justify-between flex-wrap gap-4 mb-8 pb-4 border-b border-stone-200">
           <div>
@@ -106,7 +112,7 @@ export default function FilantropiasPage() {
         {/* Departmental Campaign Main Card */}
         <div className="bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden hover:border-gold/60 transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12">
-            
+
             {/* Left Column: Flyer Preview */}
             <div className="lg:col-span-5 bg-gradient-to-b from-stone-900 via-stone-950 to-stone-900 p-6 sm:p-8 flex flex-col justify-between items-center relative overflow-hidden border-b lg:border-b-0 lg:border-r border-stone-800">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(13,82,38,0.45),rgba(0,0,0,0.95))] pointer-events-none" />
@@ -123,16 +129,16 @@ export default function FilantropiasPage() {
               </div>
 
               {/* Interactive Flyer Thumbnail */}
-              <div 
-                onClick={() => setIsFlyerModalOpen(true)}
+              <div
+                onClick={() => setModalFlyer({ img: departamentalCampaign.flyerImg, title: departamentalCampaign.title })}
                 className="relative group cursor-pointer w-full max-w-xs rounded-2xl overflow-hidden shadow-2xl border border-gold/40 z-10 transition-transform duration-300 hover:scale-[1.02]"
               >
-                <img 
-                  src={departamentalCampaign.flyerImg} 
-                  alt="Flyer Filantropía Juguetes para Perros" 
+                <img
+                  src={departamentalCampaign.flyerImg}
+                  alt="Flyer Filantropía Juguetes para Perros"
                   className="w-full h-auto object-cover"
                 />
-                
+
                 {/* Hover overlay with pulse */}
                 <div className="absolute inset-0 bg-stone-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 text-stone-100 p-4">
                   <Eye className="h-8 w-8 text-gold animate-bounce" />
@@ -145,7 +151,7 @@ export default function FilantropiasPage() {
               {/* Bottom Flyer Buttons */}
               <div className="w-full grid grid-cols-2 gap-2.5 mt-6 z-10">
                 <button
-                  onClick={() => setIsFlyerModalOpen(true)}
+                  onClick={() => setModalFlyer({ img: departamentalCampaign.flyerImg, title: departamentalCampaign.title })}
                   className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-stone-800 hover:bg-stone-700 text-stone-200 rounded-xl text-xs font-bold uppercase tracking-wider border border-stone-700 transition-colors cursor-pointer"
                 >
                   <Eye className="h-3.5 w-3.5 text-gold" />
@@ -165,7 +171,7 @@ export default function FilantropiasPage() {
 
             {/* Right Column: Information, Pricing & Order Button */}
             <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between text-left">
-              
+
               <div>
                 {/* Organizers / Partners Header */}
                 <div className="flex items-center gap-2.5 mb-3 flex-wrap">
@@ -196,7 +202,7 @@ export default function FilantropiasPage() {
                     <Tag className="h-3.5 w-3.5" />
                     <span>Precios & Promoción Oficial:</span>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-center">
                       <span className="block text-xs uppercase text-stone-300 font-semibold mb-0.5">Precio Unitario</span>
@@ -268,12 +274,83 @@ export default function FilantropiasPage() {
           </div>
         </div>
 
+        {/* 2. Tapatón: se desactiva automáticamente después del 12 de diciembre */}
+        <div className={`mt-8 bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden transition-all duration-300 ${tapatonActive ? 'hover:border-gold/60' : 'opacity-60 grayscale'}`}>
+          <div className="grid grid-cols-1 md:grid-cols-12">
+            <div className="md:col-span-4 bg-gradient-to-b from-stone-900 via-stone-950 to-stone-900 p-6 flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-800">
+              <button
+                type="button"
+                disabled={!tapatonActive}
+                onClick={() => setModalFlyer({ img: flyerTapaton, title: 'Juntos por el Tapatón' })}
+                className="relative group w-full max-w-[220px] rounded-2xl overflow-hidden shadow-2xl border border-gold/40 enabled:cursor-pointer enabled:hover:scale-[1.02] transition-transform duration-300"
+              >
+                <img src={flyerTapaton} alt="Flyer Juntos por el Tapatón" className="w-full h-auto object-cover" />
+                {tapatonActive && (
+                  <div className="absolute inset-0 bg-stone-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 text-stone-100 p-4">
+                    <Eye className="h-8 w-8 text-gold" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-center">Ver Flyer</span>
+                  </div>
+                )}
+              </button>
+            </div>
+
+            <div className="md:col-span-8 p-6 sm:p-8 flex flex-col justify-center text-left">
+              <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-demolay-green-900">
+                  Campamento de Santa Cruz
+                </span>
+                {tapatonActive ? (
+                  <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-amber-300">
+                    <Calendar className="h-3 w-3" />
+                    Hasta el 12 de diciembre de 2026
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-stone-300">
+                    Campaña finalizada
+                  </span>
+                )}
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-demolay-green-950 leading-tight mb-2">
+                Filantropía: Juntos por el Tapatón
+              </h3>
+              <p className="text-sm sm:text-base font-semibold text-demolay-gold font-sans mb-4">
+                Pequeñas tapas, una gran ayuda para la vida.
+              </p>
+              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-sans mb-6">
+                Recolectamos tapas de botellas plásticas para ayudar a los niños. Junta tus tapas y entrégalas hasta el 12 de diciembre de 2026.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-700 flex items-start gap-2.5">
+                  <div className="p-1.5 bg-white rounded-lg border border-stone-200 shrink-0 mt-0.5">
+                    <Gift className="h-4 w-4 text-demolay-gold" />
+                  </div>
+                  <div>
+                    <strong className="block text-demolay-green-950 font-bold text-xs">¿Qué recolectamos?</strong>
+                    <span className="text-stone-500 text-[11px] leading-snug">Tapas de botellas plásticas.</span>
+                  </div>
+                </div>
+                <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-700 flex items-start gap-2.5">
+                  <div className="p-1.5 bg-white rounded-lg border border-stone-200 shrink-0 mt-0.5">
+                    <HandHeart className="h-4 w-4 text-demolay-gold" />
+                  </div>
+                  <div>
+                    <strong className="block text-demolay-green-950 font-bold text-xs">¿Dónde depositarlas?</strong>
+                    <span className="text-stone-500 text-[11px] leading-snug">Templo de la Paragua.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       {/* 3. Chapter Philanthropies (Próximamente...) */}
       <section className="py-16 bg-white border-t border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-flex items-center gap-1.5 text-demolay-green font-bold text-xs uppercase tracking-widest mb-2">
@@ -298,9 +375,9 @@ export default function FilantropiasPage() {
               >
                 <div className="flex flex-col items-center">
                   <div className="relative mb-3">
-                    <img 
-                      src={cap.logo} 
-                      alt={cap.name} 
+                    <img
+                      src={cap.logo}
+                      alt={cap.name}
                       className="h-16 w-16 rounded-full object-cover border-2 border-stone-200 group-hover:border-gold shadow-sm transition-all duration-300"
                     />
                   </div>
@@ -325,13 +402,13 @@ export default function FilantropiasPage() {
       </section>
 
       {/* 4. Fullscreen Flyer Lightbox Modal */}
-      {isFlyerModalOpen && (
+      {modalFlyer && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/85 backdrop-blur-md animate-fade-in">
           <div className="relative max-w-xl w-full max-h-[92vh] flex flex-col items-center bg-stone-900 border border-gold/40 rounded-2xl overflow-hidden shadow-2xl p-4">
-            
+
             {/* Close button */}
             <button
-              onClick={() => setIsFlyerModalOpen(false)}
+              onClick={() => setModalFlyer(null)}
               className="absolute top-4 right-4 text-stone-300 hover:text-white bg-stone-800/80 hover:bg-stone-700 p-2 rounded-full transition-colors cursor-pointer z-10"
             >
               <X className="h-6 w-6" />
@@ -340,14 +417,14 @@ export default function FilantropiasPage() {
             {/* Header info */}
             <div className="w-full text-left mb-3 px-2">
               <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Campaña Departamental Oficial</span>
-              <h3 className="text-lg font-serif font-bold text-stone-100">{departamentalCampaign.title}</h3>
+              <h3 className="text-lg font-serif font-bold text-stone-100">{modalFlyer.title}</h3>
             </div>
 
             {/* Flyer Image Container */}
             <div className="w-full overflow-y-auto max-h-[70vh] flex justify-center rounded-lg bg-black/40 p-2">
-              <img 
-                src={departamentalCampaign.flyerImg} 
-                alt="Flyer Oficial Pantalla Completa" 
+              <img
+                src={modalFlyer.img}
+                alt="Flyer Oficial Pantalla Completa"
                 className="max-w-full h-auto object-contain rounded-lg shadow-lg"
               />
             </div>
@@ -355,13 +432,13 @@ export default function FilantropiasPage() {
             {/* Modal Bottom Actions */}
             <div className="w-full flex items-center justify-between gap-3 pt-4 mt-2 border-t border-stone-800">
               <span className="text-xs text-stone-400 font-sans hidden sm:inline">
-                Campamento de Santa Cruz • Bolivia Shriners
+                Campamento de Santa Cruz
               </span>
 
               <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                 <a
-                  href="/flyer_departamental.png"
-                  download="Flyer_Filantropia_Juguetes_Perros_DeMolay_SCZ.png"
+                  href={modalFlyer.img}
+                  download={`Flyer_${modalFlyer.title.replace(/\s+/g, '_')}_DeMolay_SCZ.png`}
                   className="inline-flex items-center gap-1.5 py-2 px-4 bg-demolay-green-950 hover:bg-demolay-green-900 text-gold rounded-xl text-xs font-bold uppercase tracking-wider border border-gold/40 transition-colors shadow-sm cursor-pointer"
                 >
                   <Download className="h-4 w-4" />
@@ -370,7 +447,7 @@ export default function FilantropiasPage() {
 
                 <button
                   type="button"
-                  onClick={() => setIsFlyerModalOpen(false)}
+                  onClick={() => setModalFlyer(null)}
                   className="py-2 px-4 bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   Cerrar

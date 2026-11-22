@@ -18,7 +18,7 @@ export default function Footer({ onOpenDevelopers }) {
               <img src={logo} alt="Logo" className="h-10 w-10 object-contain" />
               <div>
                 <h4 className="font-serif text-sm font-bold text-stone-100 tracking-wider">CAMPAMENTO DE SANTA CRUZ</h4>
-                <p className="text-[9px] uppercase tracking-widest text-demolay-gold font-bold">Orden DeMolay Bolivia</p>
+                <p className="text-xs uppercase tracking-widest text-demolay-gold font-bold">Orden DeMolay Bolivia</p>
               </div>
             </div>
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
@@ -112,12 +112,12 @@ export default function Footer({ onOpenDevelopers }) {
         </div>
 
         {/* Bottom Bar: Legal Copyright and Developer Credits */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-[10px] md:text-xs">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-xs md:text-xs">
 
           {/* Copyright */}
           <div className="text-center sm:text-left leading-normal font-sans">
             <p>© {currentYear} Campamento de Santa Cruz. Todos los derechos reservados.</p>
-            <p className="text-[10px] text-stone-600 mt-0.5">Jurisdicción 075 - Región 9. Autorizado por la Delegación Regional para Santa Cruz.</p>
+            <p className="text-xs text-stone-600 mt-0.5">Jurisdicción 075 - Región 9. Autorizado por la Delegación Regional para Santa Cruz.</p>
           </div>
 
           {/* Developer Credit Button */}
@@ -127,7 +127,7 @@ export default function Footer({ onOpenDevelopers }) {
               className="group inline-flex items-center px-3.5 py-1.5 rounded-xl bg-stone-950 border border-stone-800 hover:border-gold/60 text-stone-300 hover:text-gold transition-all duration-300 transform hover:scale-102 cursor-pointer shadow-sm hover:shadow-md"
               title="Ver mural de creadores y desarrolladores"
             >
-              <span className="text-[11px] font-sans font-medium text-stone-300 group-hover:text-stone-100">
+              <span className="text-xs font-sans font-medium text-stone-300 group-hover:text-stone-100">
                 Desarrollado por <strong className="text-gold group-hover:underline">Jose Alberto Vargas & Armando Sandoval</strong>
               </span>
             </button>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useModalBehavior from '../../hooks/useModalBehavior';
 import {
   Heart,
   HandHeart,
@@ -21,7 +22,7 @@ import {
 
 // Logos
 import logoSC from '../../assets/images/logos/logo1.png';
-import flyerDepartamental from '../../assets/images/filantropia/flyer_departamental.png';
+import flyerDepartamental from '../../assets/images/filantropia/flyer_departamental.jpg';
 import logoPrimax from '../../assets/images/logos/primax.jpeg';
 import logoJdo from '../../assets/images/logos/jdo.jpeg';
 import logoGrigota from '../../assets/images/logos/grigota.jpeg';
@@ -29,7 +30,7 @@ import logoPaititi from '../../assets/images/logos/paititi.jpeg';
 import logoAyf from '../../assets/images/logos/ayf.png';
 import logoCna from '../../assets/images/logos/cna.jpeg';
 import logoCantera from '../../assets/images/logos/cantera.png';
-import flyerTapaton from '../../assets/images/filantropia/tapaton.png';
+import flyerTapaton from '../../assets/images/filantropia/tapaton.jpg';
 
 // Fin del Tapatón: termina al acabar el 12/12/2026 (hora Bolivia, UTC-4)
 const TAPATON_END = new Date('2026-12-13T00:00:00-04:00');
@@ -39,6 +40,7 @@ export default function FilantropiasPage() {
   const [modalFlyer, setModalFlyer] = useState(null);
   const [copiedPhone, setCopiedPhone] = useState(false);
   const tapatonActive = new Date() < TAPATON_END;
+  useModalBehavior(!!modalFlyer, () => setModalFlyer(null));
 
   // Filantropía Departamental Activa (Juguetes para Perros con Bolivia Shriners)
   const departamentalCampaign = {
@@ -104,7 +106,7 @@ export default function FilantropiasPage() {
             </h1>
           </div>
           <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-900 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-emerald-300 shadow-sm">
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-600 animate-ping" />
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-600" />
             <span>Campaña Oficial en Curso</span>
           </div>
         </div>
@@ -119,10 +121,10 @@ export default function FilantropiasPage() {
 
               {/* Flyer Top Tag */}
               <div className="w-full flex items-center justify-between gap-2 mb-4 z-10">
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-gold text-stone-950 px-3 py-1 rounded-full shadow">
+                <span className="text-xs font-bold uppercase tracking-wider bg-gold text-stone-950 px-3 py-1 rounded-full shadow">
                   Flyer Oficial
                 </span>
-                <span className="text-[10px] font-semibold text-stone-300 flex items-center gap-1">
+                <span className="text-xs font-semibold text-stone-300 flex items-center gap-1">
                   <Calendar className="h-3 w-3 text-gold" />
                   Gestión 2026
                 </span>
@@ -141,7 +143,7 @@ export default function FilantropiasPage() {
 
                 {/* Hover overlay with pulse */}
                 <div className="absolute inset-0 bg-stone-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center gap-2 text-stone-100 p-4">
-                  <Eye className="h-8 w-8 text-gold animate-bounce" />
+                  <Eye className="h-8 w-8 text-gold" />
                   <span className="text-xs font-bold uppercase tracking-wider text-center">
                     Clic para ver Flyer en Pantalla Completa
                   </span>
@@ -198,7 +200,7 @@ export default function FilantropiasPage() {
 
                 {/* Pricing / Offer Banner */}
                 <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-demolay-green-950 via-demolay-green-900 to-demolay-green-950 text-stone-100 border border-gold/40 shadow-md">
-                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold font-bold mb-2">
+                  <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-gold font-bold mb-2">
                     <Tag className="h-3.5 w-3.5" />
                     <span>Precios & Promoción Oficial:</span>
                   </div>
@@ -210,10 +212,9 @@ export default function FilantropiasPage() {
                     </div>
 
                     <div className="p-3 bg-gradient-to-br from-gold/20 to-gold/5 rounded-xl border border-gold/40 text-center relative overflow-hidden">
-                      <div className="absolute top-1 right-1 bg-gold text-stone-950 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">
-                        Mejor Opción
-                      </div>
-                      <span className="block text-xs uppercase text-gold font-bold mb-0.5">Super Promo</span>
+                      <span className="block text-xs uppercase text-gold font-bold mb-0.5">
+                        Super Promo · <span className="bg-gold text-stone-950 px-1.5 py-0.5 rounded">Mejor Opción</span>
+                      </span>
                       <strong className="text-xl sm:text-2xl font-serif text-amber-300">3 x 100 BS</strong>
                     </div>
                   </div>
@@ -228,7 +229,7 @@ export default function FilantropiasPage() {
                       </div>
                       <div>
                         <strong className="block text-demolay-green-950 font-bold text-xs">{feat.title}</strong>
-                        <span className="text-stone-500 text-[11px] leading-snug">{feat.desc}</span>
+                        <span className="text-stone-500 text-xs leading-snug">{feat.desc}</span>
                       </div>
                     </div>
                   ))}
@@ -238,7 +239,7 @@ export default function FilantropiasPage() {
               {/* Direct Order & WhatsApp Section */}
               <div className="pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
                 <div>
-                  <span className="block text-[10px] uppercase font-bold tracking-wider text-stone-400">
+                  <span className="block text-xs uppercase font-bold tracking-wider text-stone-400">
                     Línea Oficial de Pedidos y Donaciones:
                   </span>
                   <div className="flex items-center gap-2 mt-0.5">
@@ -249,10 +250,10 @@ export default function FilantropiasPage() {
                     <button
                       onClick={() => handleCopy(departamentalCampaign.phone)}
                       title="Copiar número de teléfono"
-                      className="p-1.5 bg-stone-100 hover:bg-stone-200 text-stone-600 rounded-lg text-xs transition-colors cursor-pointer flex items-center gap-1"
+                      className="min-h-[40px] px-3 py-2 bg-stone-100 hover:bg-stone-200 text-stone-600 rounded-lg text-xs transition-colors cursor-pointer flex items-center gap-1"
                     >
                       {copiedPhone ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5" />}
-                      <span className="text-[10px]">{copiedPhone ? '¡Copiado!' : 'Copiar'}</span>
+                      <span className="text-xs">{copiedPhone ? '¡Copiado!' : 'Copiar'}</span>
                     </button>
                   </div>
                 </div>
@@ -300,12 +301,12 @@ export default function FilantropiasPage() {
                   Campamento de Santa Cruz
                 </span>
                 {tapatonActive ? (
-                  <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-amber-300">
+                  <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-amber-300">
                     <Calendar className="h-3 w-3" />
                     Hasta el 12 de diciembre de 2026
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-stone-300">
+                  <span className="inline-flex items-center gap-1.5 bg-stone-200 text-stone-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-stone-300">
                     Campaña finalizada
                   </span>
                 )}
@@ -328,7 +329,7 @@ export default function FilantropiasPage() {
                   </div>
                   <div>
                     <strong className="block text-demolay-green-950 font-bold text-xs">¿Qué recolectamos?</strong>
-                    <span className="text-stone-500 text-[11px] leading-snug">Tapas de botellas plásticas.</span>
+                    <span className="text-stone-500 text-xs leading-snug">Tapas de botellas plásticas.</span>
                   </div>
                 </div>
                 <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-700 flex items-start gap-2.5">
@@ -337,7 +338,7 @@ export default function FilantropiasPage() {
                   </div>
                   <div>
                     <strong className="block text-demolay-green-950 font-bold text-xs">¿Dónde depositarlas?</strong>
-                    <span className="text-stone-500 text-[11px] leading-snug">Templo de la Paragua.</span>
+                    <span className="text-stone-500 text-xs leading-snug">Templo de la Paragua.</span>
                   </div>
                 </div>
               </div>
@@ -385,13 +386,13 @@ export default function FilantropiasPage() {
                   <h3 className="font-serif font-bold text-xs text-demolay-green-950 mb-1 leading-snug">
                     {cap.name}
                   </h3>
-                  <span className="text-[10px] text-stone-500 font-mono font-semibold">
+                  <span className="text-xs text-stone-500 font-mono font-semibold">
                     {cap.code}
                   </span>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-stone-200 w-full flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 py-1.5 px-2 rounded-lg border border-amber-200/80">
-                  <Clock className="h-3 w-3 text-amber-600 animate-spin" style={{ animationDuration: '8s' }} />
+                <div className="mt-4 pt-3 border-t border-stone-200 w-full flex items-center justify-center gap-1 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-50 py-1.5 px-2 rounded-lg border border-amber-200/80">
+                  <Clock className="h-3 w-3 text-amber-600" />
                   <span>Próximamente...</span>
                 </div>
               </div>
@@ -403,7 +404,7 @@ export default function FilantropiasPage() {
 
       {/* 4. Fullscreen Flyer Lightbox Modal */}
       {modalFlyer && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/85 backdrop-blur-md animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/85 backdrop-blur-md animate-fade-in" role="dialog" aria-modal="true" onClick={(e) => e.target === e.currentTarget && setModalFlyer(null)}>
           <div className="relative max-w-xl w-full max-h-[92vh] flex flex-col items-center bg-stone-900 border border-gold/40 rounded-2xl overflow-hidden shadow-2xl p-4">
 
             {/* Close button */}
@@ -416,7 +417,7 @@ export default function FilantropiasPage() {
 
             {/* Header info */}
             <div className="w-full text-left mb-3 px-2">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Campaña Departamental Oficial</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-gold">Campaña Departamental Oficial</span>
               <h3 className="text-lg font-serif font-bold text-stone-100">{modalFlyer.title}</h3>
             </div>
 
@@ -438,7 +439,7 @@ export default function FilantropiasPage() {
               <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                 <a
                   href={modalFlyer.img}
-                  download={`Flyer_${modalFlyer.title.replace(/\s+/g, '_')}_DeMolay_SCZ.png`}
+                  download={`Flyer_${modalFlyer.title.replace(/\s+/g, '_')}_DeMolay_SCZ.jpg`}
                   className="inline-flex items-center gap-1.5 py-2 px-4 bg-demolay-green-950 hover:bg-demolay-green-900 text-gold rounded-xl text-xs font-bold uppercase tracking-wider border border-gold/40 transition-colors shadow-sm cursor-pointer"
                 >
                   <Download className="h-4 w-4" />

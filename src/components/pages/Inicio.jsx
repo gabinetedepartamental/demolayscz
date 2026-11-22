@@ -76,7 +76,7 @@ export default function Inicio() {
                 <img src={logo} alt="Logo" className="h-12 w-12 object-contain filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)]" />
                 <div>
                   <h3 className="font-serif text-lg font-bold text-demolay-gold leading-tight">Campamento de Santa Cruz</h3>
-                  <p className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider">Orden DeMolay Bolivia</p>
+                  <p className="text-xs text-stone-400 font-semibold uppercase tracking-wider">Orden DeMolay Bolivia</p>
                 </div>
               </div>
 
@@ -87,15 +87,15 @@ export default function Inicio() {
               <div className="grid grid-cols-3 gap-2 text-center border-t border-stone-850 pt-4">
                 <div className="border-r border-stone-850">
                   <span className="block text-base font-serif font-bold text-demolay-gold">075</span>
-                  <span className="text-[9px] uppercase tracking-wider text-stone-400 font-semibold font-sans">Jurisdicción</span>
+                  <span className="text-xs uppercase tracking-wider text-stone-400 font-semibold font-sans">Jurisdicción</span>
                 </div>
                 <div className="border-r border-stone-850">
                   <span className="block text-base font-serif font-bold text-demolay-gold">Reg. 9</span>
-                  <span className="text-[9px] uppercase tracking-wider text-stone-400 font-semibold font-sans">Región</span>
+                  <span className="text-xs uppercase tracking-wider text-stone-400 font-semibold font-sans">Región</span>
                 </div>
                 <div>
                   <span className="block text-base font-serif font-bold text-demolay-gold">1996</span>
-                  <span className="text-[9px] uppercase tracking-wider text-stone-400 font-semibold font-sans">Fundación</span>
+                  <span className="text-xs uppercase tracking-wider text-stone-400 font-semibold font-sans">Fundación</span>
                 </div>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function Inicio() {
 
               <div>
                 <div className="mb-3 text-center">
-                  <span className="text-[9px] uppercase font-bold tracking-widest text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30">
+                  <span className="text-xs uppercase font-bold tracking-widest text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30">
                     El Fundador
                   </span>
                 </div>
@@ -187,7 +187,7 @@ export default function Inicio() {
                   <h3 className="font-serif text-2xl font-bold text-demolay-green-950 mb-1 text-center">
                     Frank S. Land (Dad Land)
                   </h3>
-                  <p className="text-stone-500 text-[10px] font-semibold tracking-wider uppercase mb-4 flex items-center justify-center gap-1 font-sans">
+                  <p className="text-stone-500 text-xs font-semibold tracking-wider uppercase mb-4 flex items-center justify-center gap-1 font-sans">
                     <Calendar className="h-3.5 w-3.5 text-demolay-green" />
                     1890 - 1959 • Kansas City
                   </p>
@@ -200,7 +200,7 @@ export default function Inicio() {
                 </div>
               </div>
               <div className="p-2 pt-0 mt-2">
-                <div className="border-t border-stone-200 pt-4 text-[10px] text-stone-500 font-sans italic">
+                <div className="border-t border-stone-200 pt-4 text-xs text-stone-500 font-sans italic">
                   "Dad Frank S. Land inculcó que la mayor riqueza radica en guiar el potencial de la juventud."
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function Inicio() {
 
               <div>
                 <div className="mb-3 text-center">
-                  <span className="text-[9px] uppercase font-bold tracking-widest text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30">
+                  <span className="text-xs uppercase font-bold tracking-widest text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30">
                     El Mártir Histórico
                   </span>
                 </div>
@@ -233,7 +233,7 @@ export default function Inicio() {
                   <h3 className="font-serif text-2xl font-bold text-demolay-green-950 mb-1 text-center">
                     Jacques de Molay
                   </h3>
-                  <p className="text-stone-500 text-[10px] font-semibold tracking-wider uppercase mb-4 flex items-center justify-center gap-1 font-sans">
+                  <p className="text-stone-500 text-xs font-semibold tracking-wider uppercase mb-4 flex items-center justify-center gap-1 font-sans">
                     <Calendar className="h-3.5 w-3.5 text-demolay-green" />
                     1244 - 1314 • París, Francia
                   </p>
@@ -246,7 +246,7 @@ export default function Inicio() {
                 </div>
               </div>
               <div className="p-2 pt-0 mt-2">
-                <div className="border-t border-stone-200 pt-4 text-[10px] text-stone-500 font-sans italic">
+                <div className="border-t border-stone-200 pt-4 text-xs text-stone-500 font-sans italic">
                   "Su sacrificio legó el máximo símbolo de lealtad, fidelidad y valentía fraternal."
                 </div>
               </div>

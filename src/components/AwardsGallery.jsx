@@ -65,12 +65,12 @@ export default function AwardsGallery() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gold/20 rounded-full blur-md group-hover:bg-gold/30 transition-colors" />
                     <div className="relative p-3.5 bg-demolay-green-950 border border-gold/50 rounded-full text-gold">
-                      <Award className="h-6 w-6 animate-pulse" />
+                      <Award className="h-6 w-6" />
                     </div>
                   </div>
 
                   {/* Scope Badge */}
-                  <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full flex items-center gap-1 ${item.scope === 'Internacional'
+                  <span className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full flex items-center gap-1 ${item.scope === 'Internacional'
                     ? 'bg-amber-100 text-amber-800 border border-amber-200'
                     : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                     }`}>
@@ -84,7 +84,7 @@ export default function AwardsGallery() {
                   {item.title}
                 </h3>
 
-                <p className="text-[10px] text-stone-400 uppercase font-semibold tracking-wider mb-4 font-sans">
+                <p className="text-xs text-stone-400 uppercase font-semibold tracking-wider mb-4 font-sans">
                   Otorgado por: <span className="text-stone-500">{item.authority}</span>
                 </p>
 
@@ -95,11 +95,11 @@ export default function AwardsGallery() {
 
               {/* Criteria / Footnote */}
               <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-                <span className="text-[9px] uppercase font-bold text-demolay-green-800 tracking-widest flex items-center gap-1">
+                <span className="text-xs uppercase font-bold text-demolay-green-800 tracking-widest flex items-center gap-1">
                   <ShieldCheck className="h-3.5 w-3.5 text-demolay-green" />
                   Criterio de Mérito
                 </span>
-                <span className="text-[11px] font-semibold text-stone-500 font-sans">
+                <span className="text-xs font-semibold text-stone-500 font-sans">
                   {item.criteria}
                 </span>
               </div>

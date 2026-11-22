@@ -128,7 +128,7 @@ export default function CapitulosListPage({ onBack }) {
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-1 font-sans text-right">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-demolay-green bg-demolay-green-900/10 border border-demolay-green/20 px-2.5 py-1 rounded">
+                    <span className="text-xs font-bold uppercase tracking-widest text-demolay-green bg-demolay-green-900/10 border border-demolay-green/20 px-2.5 py-1 rounded">
                       {cap.code}
                     </span>
                   </div>
@@ -138,7 +138,7 @@ export default function CapitulosListPage({ onBack }) {
                 <h3 className="font-serif text-xl font-bold text-demolay-green-950 mb-1 leading-snug">
                   {cap.name}
                 </h3>
-                <p className="text-[10px] italic font-serif text-stone-400 mb-4">
+                <p className="text-xs italic font-serif text-stone-400 mb-4">
                   "{cap.motto}"
                 </p>
 
@@ -161,7 +161,7 @@ export default function CapitulosListPage({ onBack }) {
 
               {/* Status Badge */}
               <div className="mt-6 pt-3 border-t border-stone-100 flex justify-end">
-                <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-sans">
+                <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-sans">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Columnas en Pie
                 </span>

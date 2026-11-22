@@ -18,12 +18,6 @@ export default function Navbar({ currentPage, onPageChange }) {
     e.preventDefault();
     onPageChange(id);
     setIsOpen(false);
-    
-    // Smooth scroll to section
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -44,10 +38,10 @@ export default function Navbar({ currentPage, onPageChange }) {
                 className="h-10 w-10 md:h-12 md:w-12 object-contain group-hover:scale-105 transition-transform duration-300" 
               />
               <div className="text-left font-serif">
-                <h1 className="text-[10px] sm:text-xs md:text-sm font-bold text-stone-100 tracking-wider whitespace-nowrap">
+                <h1 className="text-xs md:text-sm font-bold text-stone-100 tracking-wider whitespace-nowrap">
                   CAMPAMENTO DE SANTA CRUZ
                 </h1>
-                <p className="text-[8px] uppercase tracking-widest text-stone-300 font-bold font-sans mt-0.5">
+                <p className="text-xs uppercase tracking-widest text-stone-300 font-bold font-sans mt-0.5">
                   Orden DeMolay Bolivia
                 </p>
               </div>
@@ -76,14 +70,15 @@ export default function Navbar({ currentPage, onPageChange }) {
 
           {/* Mobile menu button */}
           <div className="lg:flex items-center gap-3">
-            <div className="hidden sm:inline-flex lg:hidden items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-gold/25 text-[9px] uppercase tracking-widest font-bold text-gold shadow-sm">
-              <MapPin className="h-3.5 w-3.5 text-gold animate-bounce" style={{ animationDuration: '3s' }} />
+            <div className="hidden sm:inline-flex lg:hidden items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-gold/25 text-xs uppercase tracking-widest font-bold text-gold shadow-sm">
+              <MapPin className="h-3.5 w-3.5 text-gold" />
               <span>J.075 - R.9</span>
             </div>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-stone-300 hover:text-white hover:bg-demolay-green-900 border border-stone-700 focus:outline-none transition-colors"
               aria-expanded={isOpen}
+              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

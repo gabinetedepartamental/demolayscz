@@ -1,7 +1,9 @@
 import React from 'react';
+import useModalBehavior from '../hooks/useModalBehavior';
 import { X, Award, Shield, Compass, BookOpen, Star } from 'lucide-react';
 
 export default function DetailModal({ body, onClose, onViewCapitulos }) {
+  useModalBehavior(!!body, onClose);
   if (!body) return null;
 
   // Map icon component based on the clicked body type, rendering custom logos when available
@@ -30,7 +32,7 @@ export default function DetailModal({ body, onClose, onViewCapitulos }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-stone-950/80 backdrop-blur-sm transition-opacity" 
@@ -101,7 +103,7 @@ export default function DetailModal({ body, onClose, onViewCapitulos }) {
                   {body.virtues.map((virtue, idx) => (
                     <span 
                       key={idx} 
-                      className="px-2 py-1 bg-demolay-green-950/80 border border-gold/20 text-gold text-[10px] uppercase font-semibold rounded-md tracking-wider"
+                      className="px-2 py-1 bg-demolay-green-950/80 border border-gold/20 text-gold text-xs uppercase font-semibold rounded-md tracking-wider"
                     >
                       {virtue}
                     </span>

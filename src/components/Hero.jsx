@@ -3,10 +3,7 @@ import { Compass, BookOpen, ChevronDown } from 'lucide-react';
 import logo from '../assets/images/logos/logo1.png';
 
 export default function Hero({ onPageChange }) {
-  const handlePageTransition = (id) => {
-    onPageChange(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const handlePageTransition = (id) => onPageChange(id);
 
   return (
     <section className="relative overflow-hidden bg-demolay-green-950 py-20 md:py-28 border-b border-demolay-gold/30">

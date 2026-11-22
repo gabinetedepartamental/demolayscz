@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
@@ -14,8 +14,29 @@ import ReconocimientosPage from './components/pages/ReconocimientosPage';
 import MaterialesPage from './components/pages/MaterialesPage';
 import CapitulosListPage from './components/pages/CapitulosListPage';
 
+const PAGES = ['inicio', 'murales', 'cuerpos', 'filantropias', 'reconocimientos', 'materiales', 'capitulos-list'];
+const pageFromHash = () => {
+  const id = window.location.hash.slice(1);
+  return PAGES.includes(id) ? id : 'inicio';
+};
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('inicio');
+  // La sección vive en la URL (#filantropias) para poder compartir links y usar el botón "atrás"
+  const [currentPage, setPageState] = useState(pageFromHash);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setPageState(pageFromHash());
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const setCurrentPage = (id) => {
+    if (id === currentPage) window.scrollTo({ top: 0, behavior: 'smooth' });
+    else window.location.hash = id;
+  };
   const [activeCuerpoDetail, setActiveCuerpoDetail] = useState(null);
   const [isDevelopersModalOpen, setIsDevelopersModalOpen] = useState(false);
 
@@ -49,10 +70,8 @@ export default function App() {
         onPageChange={setCurrentPage}
       />
 
-      {/* Hero Section */}
-      <Hero 
-        onPageChange={setCurrentPage}
-      />
+      {/* Hero solo en Inicio: en las demás secciones el contenido queda arriba */}
+      {currentPage === 'inicio' && <Hero onPageChange={setCurrentPage} />}
 
       {/* Main Pages Content rendering area */}
       <main className="flex-grow">

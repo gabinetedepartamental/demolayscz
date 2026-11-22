@@ -1,9 +1,11 @@
 import React from 'react';
+import useModalBehavior from '../hooks/useModalBehavior';
 import { X, Code2, Sparkles, Shield, Heart, ExternalLink, Award } from 'lucide-react';
 import imgVargas from '../assets/images/autoridades/vargas.jpeg';
 import imgSandoval from '../assets/images/autoridades/sandoval.jpeg';
 
 export default function DevelopersModal({ isOpen, onClose }) {
+  useModalBehavior(isOpen, onClose);
   if (!isOpen) return null;
 
   const developers = [
@@ -72,7 +74,7 @@ export default function DevelopersModal({ isOpen, onClose }) {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 animate-fade-in" role="dialog" aria-modal="true">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-stone-950/85 backdrop-blur-md transition-opacity"
@@ -96,7 +98,7 @@ export default function DevelopersModal({ isOpen, onClose }) {
         <div className="p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-demolay-green-950 border border-gold/30 text-[10px] font-bold uppercase tracking-widest text-gold mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-demolay-green-950 border border-gold/30 text-xs font-bold uppercase tracking-widest text-gold mb-3">
               <span>Equipo de Desarrollo & Gestión</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-stone-100 tracking-wide">
@@ -137,13 +139,13 @@ export default function DevelopersModal({ isOpen, onClose }) {
                     </div>
 
                     <div className="text-left">
-                      <span className="text-[9px] font-bold uppercase tracking-wider text-gold bg-gold/10 border border-gold/30 px-2 py-0.5 rounded inline-block mb-1">
+                      <span className="text-xs font-bold uppercase tracking-wider text-gold bg-gold/10 border border-gold/30 px-2 py-0.5 rounded inline-block mb-1">
                         {dev.badge}
                       </span>
                       <h4 className="text-base sm:text-lg font-serif font-bold text-stone-100 leading-tight">
                         {dev.name}
                       </h4>
-                      <p className="text-[11px] text-stone-400 font-medium mt-0.5">
+                      <p className="text-xs text-stone-400 font-medium mt-0.5">
                         {dev.role}
                       </p>
                     </div>
@@ -157,7 +159,7 @@ export default function DevelopersModal({ isOpen, onClose }) {
 
                 {/* Social Media Links */}
                 <div className="pt-3.5 border-t border-stone-850 flex flex-col gap-2 text-left">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-stone-400">
                     Contacto & Redes:
                   </span>
                   <div className="flex flex-wrap items-center gap-2">
@@ -172,7 +174,7 @@ export default function DevelopersModal({ isOpen, onClose }) {
                         aria-label={`${dev.name} en ${soc.name}`}
                       >
                         {soc.icon}
-                        <span className="text-[11px] font-medium">{soc.name}</span>
+                        <span className="text-xs font-medium">{soc.name}</span>
                       </a>
                     ))}
                   </div>
@@ -182,8 +184,8 @@ export default function DevelopersModal({ isOpen, onClose }) {
           </div>
 
           {/* Fraternal Footer Note */}
-          <div className="p-3.5 bg-stone-950 border border-stone-850 rounded-xl flex items-center justify-center gap-2 text-center text-[11px] text-stone-400 font-sans">
-            <Heart className="h-3.5 w-3.5 text-gold shrink-0 animate-pulse" />
+          <div className="p-3.5 bg-stone-950 border border-stone-850 rounded-xl flex items-center justify-center gap-2 text-center text-xs text-stone-400 font-sans">
+            <Heart className="h-3.5 w-3.5 text-gold shrink-0" />
             <span>
               Desarrollado con dedicación fraternal para el <strong>Campamento de Santa Cruz</strong> • Orden DeMolay Bolivia
             </span>

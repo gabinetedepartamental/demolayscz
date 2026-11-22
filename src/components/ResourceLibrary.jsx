@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useModalBehavior from '../hooks/useModalBehavior';
 import { Unlock, FileText, Eye, X, BookOpen, Sparkles, BookMarked } from 'lucide-react';
 import LiquidDownloadButton from './LiquidDownloadButton';
 
@@ -18,6 +19,7 @@ const documents = [
 
 export default function ResourceLibrary() {
   const [selectedDoc, setSelectedDoc] = useState(null);
+  useModalBehavior(!!selectedDoc, () => setSelectedDoc(null));
 
   const handleDocClick = (doc) => {
     setSelectedDoc(doc);
@@ -53,13 +55,13 @@ export default function ResourceLibrary() {
               {/* Unlock badge */}
               <div className="absolute top-5 right-5 text-emerald-700 z-10 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 flex items-center gap-1.5 shadow-sm">
                 <Unlock className="h-3.5 w-3.5 text-emerald-600" />
-                <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-700">Acceso Público</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">Acceso Público</span>
               </div>
 
               {/* Main Content wrapper */}
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-demolay-gold bg-demolay-green-950 px-2.5 py-0.5 rounded">
+                  <span className="text-xs font-bold uppercase tracking-wider text-demolay-gold bg-demolay-green-950 px-2.5 py-0.5 rounded">
                     {doc.type}
                   </span>
                 </div>
@@ -73,10 +75,10 @@ export default function ResourceLibrary() {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-2">
-                  <span className="text-[10px] font-semibold bg-stone-200 text-stone-700 px-2.5 py-1 rounded">
+                  <span className="text-xs font-semibold bg-stone-200 text-stone-700 px-2.5 py-1 rounded">
                     {doc.size}
                   </span>
-                  <span className="text-[10px] font-semibold px-2.5 py-1 rounded border bg-emerald-50 text-emerald-800 border-emerald-200">
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded border bg-emerald-50 text-emerald-800 border-emerald-200">
                     Nivel: {doc.requiredGrade}
                   </span>
                 </div>
@@ -84,7 +86,7 @@ export default function ResourceLibrary() {
 
               {/* Action CTA Button */}
               <div className="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between text-xs font-sans">
-                <span className="text-emerald-700 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                <span className="text-emerald-700 font-bold uppercase tracking-wider text-xs flex items-center gap-1.5">
                   <Unlock className="h-3.5 w-3.5 text-emerald-600" />
                   Descarga Libre
                 </span>
@@ -102,7 +104,7 @@ export default function ResourceLibrary() {
 
       {/* Document Viewer & Download Modal */}
       {selectedDoc && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
           <div className="absolute inset-0 bg-stone-950/80 backdrop-blur-sm" onClick={() => setSelectedDoc(null)} />
           
           <div className="relative w-full max-w-xl overflow-hidden rounded-xl border border-gold/50 bg-stone-900 text-stone-100 shadow-2xl z-10 animate-fade-in">
@@ -121,7 +123,7 @@ export default function ResourceLibrary() {
                   <FileText className="h-6 w-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-gold">Obra Bibliográfica Oficial</span>
+                  <span className="text-xs uppercase font-bold tracking-widest text-gold">Obra Bibliográfica Oficial</span>
                   <h3 className="text-xl font-serif font-bold text-stone-100 leading-snug">{selectedDoc.title}</h3>
                 </div>
               </div>

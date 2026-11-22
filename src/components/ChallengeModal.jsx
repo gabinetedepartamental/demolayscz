@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import useModalBehavior from '../hooks/useModalBehavior';
 import { X, Shield, Lock, Award } from 'lucide-react';
 
 const questionBank = {
@@ -219,6 +220,7 @@ export default function ChallengeModal({ isOpen, onClose, onSuccess, grade }) {
     }
   }, [grade, isOpen]);
 
+  useModalBehavior(isOpen, onClose);
   if (!isOpen) return null;
 
   const handleSubmit = async (e) => {
@@ -260,7 +262,7 @@ export default function ChallengeModal({ isOpen, onClose, onSuccess, grade }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
       {/* Dark Blur Overlay */}
       <div 
         className="absolute inset-0 bg-stone-950/80 backdrop-blur-sm transition-opacity" 
@@ -286,7 +288,7 @@ export default function ChallengeModal({ isOpen, onClose, onSuccess, grade }) {
           {/* Header */}
           <div className="text-center mb-6">
             <div className="inline-flex items-center justify-center p-3 rounded-full bg-demolay-green-950 border border-demolay-gold/30 text-demolay-gold mb-3">
-              <Shield className="h-8 w-8 animate-pulse" />
+              <Shield className="h-8 w-8" />
             </div>
             <h3 className="text-2xl font-serif font-bold text-stone-100 tracking-wide">
               Desafío de Grado
@@ -307,7 +309,7 @@ export default function ChallengeModal({ isOpen, onClose, onSuccess, grade }) {
             {currentQuestion && (
               <div className="p-4 bg-stone-950 border border-stone-850 rounded-lg space-y-3 text-left">
                 <div className="border-b border-stone-850 pb-1.5 text-left">
-                  <span className="text-[9px] uppercase tracking-widest text-demolay-gold font-bold">
+                  <span className="text-xs uppercase tracking-widest text-demolay-gold font-bold">
                     PREGUNTA RITUALÍSTICA
                   </span>
                 </div>
@@ -349,7 +351,7 @@ export default function ChallengeModal({ isOpen, onClose, onSuccess, grade }) {
           {/* Institutional note */}
           <div className="mt-6 border-t border-stone-800 pt-4 flex gap-3 text-left">
             <Award className="h-5 w-5 text-demolay-gold shrink-0 mt-0.5" />
-            <p className="text-[10px] text-stone-400 leading-normal font-sans">
+            <p className="text-xs text-stone-400 leading-normal font-sans">
               La descarga del material está sujeta a los juramentos tomados ante el Altar del Capítulo. La difusión pública viola las normas internas de la Orden.
             </p>
           </div>

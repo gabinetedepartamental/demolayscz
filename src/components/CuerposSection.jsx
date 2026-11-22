@@ -141,7 +141,7 @@ export default function CuerposSection({ onOpenDetails }) {
                   <div className="h-16 w-16 bg-stone-900/5 border border-gold/30 rounded-xl flex items-center justify-center overflow-hidden p-2 transition-all duration-300">
                     {getIcon(cuerpo)}
                   </div>
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-demolay-green bg-demolay-green-900/10 px-2 py-0.5 rounded border border-demolay-green/20">
+                  <span className="text-xs font-bold uppercase tracking-wider text-demolay-green bg-demolay-green-900/10 px-2 py-0.5 rounded border border-demolay-green/20">
                     {cuerpo.category}
                   </span>
                 </div>
@@ -163,7 +163,7 @@ export default function CuerposSection({ onOpenDetails }) {
               {/* Action Trigger button */}
               <button
                 onClick={() => onOpenDetails(cuerpo)}
-                className="mt-4 flex items-center justify-center gap-2 w-full py-2.5 bg-white hover:bg-demolay-green-950 text-demolay-green-950 hover:text-stone-100 border border-stone-200 hover:border-demolay-green-950 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-sm group-hover:shadow-md hover-premium-button animate-fade-in"
+                className="mt-4 flex items-center justify-center gap-2 w-full py-2.5 bg-white hover:bg-demolay-green-950 text-demolay-green-950 hover:text-stone-100 border border-stone-200 hover:border-demolay-green-950 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-sm group-hover:shadow-md hover-premium-button animate-fade-in"
               >
                 Ver Información Detallada
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform">

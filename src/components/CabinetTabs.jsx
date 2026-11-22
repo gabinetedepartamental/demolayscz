@@ -304,7 +304,7 @@ function CabinetMemberCard({ leader }) {
           <div className="w-full">
             {/* Portrait Card */}
             <div className="aspect-square w-full bg-stone-100 rounded-lg border border-stone-200 flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-stone-50 transition-colors">
-              <div className="absolute top-0 right-0 bg-demolay-green-950 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-[8px] font-bold uppercase tracking-widest text-gold z-10">
+              <div className="absolute top-0 right-0 bg-demolay-green-950 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-xs font-bold uppercase tracking-widest text-gold z-10">
                 {badge}
               </div>
               {leader.image ? (
@@ -322,7 +322,7 @@ function CabinetMemberCard({ leader }) {
               )}
             </div>
 
-            <span className="text-[9px] font-bold text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30 tracking-wider uppercase inline-block mb-2">
+            <span className="text-xs font-bold text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30 tracking-wider uppercase inline-block mb-2">
               {leader.office}
             </span>
             <h3 className="font-serif font-bold text-base md:text-lg text-demolay-green-950 mb-1 leading-tight group-hover:text-demolay-green-900 transition-colors">
@@ -331,7 +331,7 @@ function CabinetMemberCard({ leader }) {
           </div>
 
           <div>
-            <div className="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between text-[10px] md:text-[11px] text-stone-500 font-sans">
+            <div className="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between text-xs md:text-xs text-stone-500 font-sans">
               <span className="flex items-center gap-1 font-medium">
                 <Award className="h-3.5 w-3.5 text-demolay-green-800" />
                 {leader.chapter}
@@ -340,8 +340,8 @@ function CabinetMemberCard({ leader }) {
             </div>
 
             {/* Quick action text/indicator - bajado un poco con más espacio */}
-            <div className="mt-3.5 pt-2.5 pb-0.5 flex items-center justify-center gap-1 text-[9px] font-bold uppercase tracking-widest text-demolay-gold border-t border-dashed border-stone-150">
-              <RotateCw className="h-3 w-3 animate-spin" style={{ animationDuration: '6s' }} />
+            <div className="mt-3.5 pt-2.5 pb-0.5 flex items-center justify-center gap-1 text-xs font-bold uppercase tracking-widest text-demolay-gold border-t border-dashed border-stone-150">
+              <RotateCw className="h-3 w-3" />
               Ver Biografía
             </div>
           </div>
@@ -352,7 +352,7 @@ function CabinetMemberCard({ leader }) {
           <div className="w-full text-left">
             {/* Top accent */}
             <div className="flex items-center justify-between mb-2.5 border-b border-stone-850 pb-2">
-              <span className="text-[8px] font-bold text-gold uppercase tracking-widest">
+              <span className="text-xs font-bold text-gold uppercase tracking-widest">
                 {badge} • Perfil
               </span>
               <RotateCw className="h-3.5 w-3.5 text-stone-400" />
@@ -361,7 +361,7 @@ function CabinetMemberCard({ leader }) {
             <h3 className="font-serif font-bold text-base md:text-lg text-gold mb-0.5 leading-tight">
               {leader.name}
             </h3>
-            <p className="text-[9px] text-stone-400 font-medium uppercase tracking-wider mb-3">
+            <p className="text-xs text-stone-400 font-medium uppercase tracking-wider mb-3">
               {leader.office}
             </p>
 
@@ -372,8 +372,8 @@ function CabinetMemberCard({ leader }) {
                 <div className="flex items-start gap-2">
                   <Gem className="h-3.5 w-3.5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-[8px] font-bold text-gold/80 uppercase tracking-wider">Cargos Ocupados</span>
-                    <span className="text-stone-300 text-[11px] font-sans leading-snug whitespace-pre-line">{leader.cargos}</span>
+                    <span className="block text-xs font-bold text-gold/80 uppercase tracking-wider">Cargos Ocupados</span>
+                    <span className="text-stone-300 text-xs font-sans leading-snug whitespace-pre-line">{leader.cargos}</span>
                   </div>
                 </div>
               )}
@@ -383,8 +383,8 @@ function CabinetMemberCard({ leader }) {
                 <div className="flex items-start gap-2">
                   <Shield className="h-3.5 w-3.5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-[8px] font-bold text-gold/80 uppercase tracking-wider">Capítulo Madre</span>
-                    <span className="text-stone-300 text-[11px] font-sans leading-snug">{leader.capituloMadre}</span>
+                    <span className="block text-xs font-bold text-gold/80 uppercase tracking-wider">Capítulo Madre</span>
+                    <span className="text-stone-300 text-xs font-sans leading-snug">{leader.capituloMadre}</span>
                   </div>
                 </div>
               )}
@@ -395,8 +395,8 @@ function CabinetMemberCard({ leader }) {
                   <div className="flex items-start gap-2">
                     <Swords className="h-3.5 w-3.5 text-gold shrink-0 mt-0.5" />
                     <div>
-                      <span className="block text-[8px] font-bold text-gold/80 uppercase tracking-wider">Grado</span>
-                      <span className="text-stone-300 text-[11px] font-sans leading-snug">{leader.grado}</span>
+                      <span className="block text-xs font-bold text-gold/80 uppercase tracking-wider">Grado</span>
+                      <span className="text-stone-300 text-xs font-sans leading-snug">{leader.grado}</span>
                     </div>
                   </div>
                 )}
@@ -405,8 +405,8 @@ function CabinetMemberCard({ leader }) {
                   <div className="flex items-start gap-2">
                     <Clock className="h-3.5 w-3.5 text-gold shrink-0 mt-0.5" />
                     <div>
-                      <span className="block text-[8px] font-bold text-gold/80 uppercase tracking-wider">Tiempo Orden</span>
-                      <span className="text-stone-300 text-[11px] font-sans leading-snug">{leader.tiempoOrden}</span>
+                      <span className="block text-xs font-bold text-gold/80 uppercase tracking-wider">Tiempo Orden</span>
+                      <span className="text-stone-300 text-xs font-sans leading-snug">{leader.tiempoOrden}</span>
                     </div>
                   </div>
                 )}
@@ -417,8 +417,8 @@ function CabinetMemberCard({ leader }) {
                 <div className="flex items-start gap-2">
                   <Award className="h-3.5 w-3.5 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <span className="block text-[8px] font-bold text-gold/80 uppercase tracking-wider">Reconocimientos</span>
-                    <span className="text-stone-300 text-[11px] font-sans leading-snug">{leader.reconocimientos}</span>
+                    <span className="block text-xs font-bold text-gold/80 uppercase tracking-wider">Reconocimientos</span>
+                    <span className="text-stone-300 text-xs font-sans leading-snug">{leader.reconocimientos}</span>
                   </div>
                 </div>
               )}
@@ -428,7 +428,7 @@ function CabinetMemberCard({ leader }) {
                 <div className="pt-2 border-t border-stone-850 flex items-start gap-2">
                   <Quote className="h-3.5 w-3.5 text-gold shrink-0 mt-1" />
                   <div>
-                    <span className="block text-[8px] font-bold text-gold/80 uppercase tracking-wider italic">Frase Motivadora</span>
+                    <span className="block text-xs font-bold text-gold/80 uppercase tracking-wider italic">Frase Motivadora</span>
                     <span className="text-stone-200 text-[11.5px] font-serif italic leading-relaxed block mt-0.5 pb-2 px-1">
                       "{leader.fraseMotivadora}"
                     </span>
@@ -440,7 +440,7 @@ function CabinetMemberCard({ leader }) {
 
           <div>
             <div className="mt-3 pt-2 border-t border-stone-850">
-              <button className="w-full py-2 bg-stone-800 hover:bg-demolay-green-950 text-stone-200 hover:text-stone-100 rounded text-[9px] font-bold uppercase tracking-wider transition-colors border border-stone-700 cursor-pointer">
+              <button className="w-full py-2 bg-stone-800 hover:bg-demolay-green-950 text-stone-200 hover:text-stone-100 rounded text-xs font-bold uppercase tracking-wider transition-colors border border-stone-700 cursor-pointer">
                 Volver
               </button>
             </div>
@@ -457,7 +457,7 @@ function ActualLeaderCard({ leader }) {
       <div>
         {/* Portrait Placeholder Card inside */}
         <div className="aspect-square w-full bg-stone-100 rounded-lg border border-stone-200 flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-stone-50 transition-colors">
-          <div className="absolute top-0 right-0 bg-gold/20 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-[8px] font-bold uppercase tracking-widest text-gold z-10">
+          <div className="absolute top-0 right-0 bg-gold/20 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-xs font-bold uppercase tracking-widest text-gold z-10">
             Activo
           </div>
           {leader.image ? (
@@ -475,7 +475,7 @@ function ActualLeaderCard({ leader }) {
           )}
         </div>
 
-        <span className="text-[9px] font-bold text-demolay-green bg-demolay-green-900/10 px-2 py-0.5 rounded border border-demolay-green/20 tracking-wider uppercase inline-block mb-2">
+        <span className="text-xs font-bold text-demolay-green bg-demolay-green-900/10 px-2 py-0.5 rounded border border-demolay-green/20 tracking-wider uppercase inline-block mb-2">
           {leader.role}
         </span>
         <h3 className="font-serif font-bold text-lg text-demolay-green-950 mb-1 leading-tight group-hover:text-demolay-green-900 transition-colors">
@@ -488,8 +488,8 @@ function ActualLeaderCard({ leader }) {
           <Shield className="h-4 w-4 text-demolay-green shrink-0 mt-0.5" />
           <span>{leader.chapter}</span>
         </div>
-        <div className="flex items-center justify-between text-[11px] text-stone-500 font-medium pl-5.5">
-          <span className="text-[10px] uppercase tracking-wider text-stone-400 font-bold">Gestión</span>
+        <div className="flex items-center justify-between text-xs text-stone-500 font-medium pl-5.5">
+          <span className="text-xs uppercase tracking-wider text-stone-400 font-bold">Gestión</span>
           <span className="font-semibold text-stone-600">{leader.term}</span>
         </div>
       </div>
@@ -505,7 +505,7 @@ function ExternalLeaderCard({ leader }) {
       <div>
         {/* Portrait Card */}
         <div className="aspect-square w-full bg-stone-100 rounded-lg border border-stone-200 flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-stone-50 transition-colors">
-          <div className="absolute top-0 right-0 bg-demolay-green-950 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-[8px] font-bold uppercase tracking-widest z-10">
+          <div className="absolute top-0 right-0 bg-demolay-green-950 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-xs font-bold uppercase tracking-widest z-10">
             {badge}
           </div>
           {leader.image ? (
@@ -523,7 +523,7 @@ function ExternalLeaderCard({ leader }) {
           )}
         </div>
 
-        <span className="text-[9px] font-bold text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30 tracking-wider uppercase inline-block mb-2">
+        <span className="text-xs font-bold text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30 tracking-wider uppercase inline-block mb-2">
           {leader.office}
         </span>
         <h3 className="font-serif font-bold text-base md:text-lg text-demolay-green-950 mb-1 leading-tight group-hover:text-demolay-green-900 transition-colors">
@@ -536,8 +536,8 @@ function ExternalLeaderCard({ leader }) {
           <Award className="h-4 w-4 text-gold shrink-0 mt-0.5" />
           <span>{leader.chapter}</span>
         </div>
-        <div className="flex items-center justify-between text-[11px] text-stone-500 font-medium pl-5.5">
-          <span className="text-[10px] uppercase tracking-wider text-stone-400 font-bold">Gestión</span>
+        <div className="flex items-center justify-between text-xs text-stone-500 font-medium pl-5.5">
+          <span className="text-xs uppercase tracking-wider text-stone-400 font-bold">Gestión</span>
           <span className="font-semibold text-stone-600">{leader.term}</span>
         </div>
       </div>
@@ -553,7 +553,7 @@ function AdvisorCard({ leader }) {
       <div>
         {/* Portrait Card */}
         <div className="aspect-square w-full bg-stone-100 rounded-lg border border-stone-200 flex items-center justify-center mb-4 relative overflow-hidden group-hover:bg-stone-50 transition-colors">
-          <div className="absolute top-0 right-0 bg-demolay-green-950 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-[8px] font-bold uppercase tracking-widest z-10">
+          <div className="absolute top-0 right-0 bg-demolay-green-950 text-gold border-l border-b border-gold/30 px-2 py-0.5 rounded-bl text-xs font-bold uppercase tracking-widest z-10">
             {badge}
           </div>
           {leader.image ? (
@@ -573,7 +573,7 @@ function AdvisorCard({ leader }) {
           )}
         </div>
 
-        <span className="text-[9px] font-bold text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30 tracking-wider uppercase inline-block mb-2">
+        <span className="text-xs font-bold text-stone-100 bg-demolay-green-950 px-2 py-0.5 rounded border border-gold/30 tracking-wider uppercase inline-block mb-2">
           {leader.badge}
         </span>
         <h3 className="font-serif font-bold text-xl text-demolay-green-950 mb-1 leading-tight group-hover:text-demolay-green-900 transition-colors">

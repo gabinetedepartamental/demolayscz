@@ -236,25 +236,32 @@ const mcdsData = [
 
 export default function McdCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [autoplay, setAutoplay] = useState(true);
+  const [hovering, setHovering] = useState(false);
+  // Tras cualquier interacción manual deja de avanzar solo (no "quitarle" la lectura al usuario)
+  const [userTookControl, setUserTookControl] = useState(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
-    if (!autoplay) return;
+    if (hovering || userTookControl) return;
     const timer = setInterval(() => {
-      handleNext();
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % mcdsData.length);
+    }, 6000);
     return () => clearInterval(timer);
-  }, [currentIndex, autoplay]);
+  }, [currentIndex, hovering, userTookControl]);
 
   const handleNext = () => {
+    setUserTookControl(true);
     setCurrentIndex((prev) => (prev + 1) % mcdsData.length);
   };
 
   const handlePrev = () => {
+    setUserTookControl(true);
     setCurrentIndex((prev) => (prev - 1 + mcdsData.length) % mcdsData.length);
   };
 
   const selectSlide = (idx) => {
+    setUserTookControl(true);
     setCurrentIndex(idx);
   };
 
@@ -280,7 +287,7 @@ export default function McdCarousel() {
         </div>
 
         {/* Slider Component */}
-        <div className="relative max-w-4xl mx-auto" onMouseEnter={() => setAutoplay(false)} onMouseLeave={() => setAutoplay(true)}>
+        <div className="relative max-w-4xl mx-auto" onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
           {/* Main Card Container */}
           <div className="overflow-hidden bg-stone-50 rounded-xl border border-stone-200 shadow-xl transition-all duration-300">
             <div className="grid grid-cols-1 md:grid-cols-12 items-center">
@@ -312,15 +319,15 @@ export default function McdCarousel() {
                           <circle cx="20" cy="55" r="2.5" />
                           <circle cx="80" cy="55" r="2.5" />
                         </svg>
-                        <span className="text-[10px] text-demolay-gold tracking-widest uppercase font-bold mt-2">MCD</span>
+                        <span className="text-xs text-demolay-gold tracking-widest uppercase font-bold mt-2">MCD</span>
                       </>
                     )}
                   </div>
                 </div>
 
                 <div className="z-10 text-center">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 via-demolay-gold/30 to-amber-500/20 border border-gold text-stone-100 text-xs font-bold tracking-widest uppercase shadow-md animate-pulse">
-                    <Calendar className="h-3.5 w-3.5 text-gold animate-bounce" style={{ animationDuration: '3s' }} />
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 via-demolay-gold/30 to-amber-500/20 border border-gold text-stone-100 text-xs font-bold tracking-widest uppercase shadow-md">
+                    <Calendar className="h-3.5 w-3.5 text-gold" />
                     Gestión {currentMcd.year}
                   </span>
                 </div>
@@ -329,15 +336,15 @@ export default function McdCarousel() {
               {/* Right Side: MCD Administrative Profile info */}
               <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-between min-h-[320px] text-left">
                 <div>
-                  <span className="text-[10px] font-bold text-demolay-green-800 bg-demolay-green-900/10 px-3 py-1 rounded-full border border-demolay-green/20 tracking-wider uppercase inline-block mb-3 font-sans">
-                    Reprsentante Regional
+                  <span className="text-xs font-bold text-demolay-green-800 bg-demolay-green-900/10 px-3 py-1 rounded-full border border-demolay-green/20 tracking-wider uppercase inline-block mb-3 font-sans">
+                    Representante Regional
                   </span>
 
                   <h3 className="font-serif font-bold text-2xl md:text-3xl text-demolay-green-950 mb-1 leading-tight">
                     MCD. {currentMcd.name}
                   </h3>
 
-                  <p className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider mb-5 font-sans">
+                  <p className="text-xs text-stone-400 font-semibold uppercase tracking-wider mb-5 font-sans">
                     Capítulo de Origen: <span className="text-stone-600 font-bold">{currentMcd.chapter}</span>
                   </p>
 
@@ -360,7 +367,7 @@ export default function McdCarousel() {
           <div className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-6">
             <button
               onClick={handlePrev}
-              className="p-2.5 rounded-full bg-white border border-stone-200 hover:border-demolay-gold text-stone-700 hover:text-demolay-gold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+              className="p-3 rounded-full bg-white border border-stone-200 hover:border-demolay-gold text-stone-700 hover:text-demolay-gold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
               aria-label="Anterior líder"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -370,25 +377,28 @@ export default function McdCarousel() {
           <div className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-6">
             <button
               onClick={handleNext}
-              className="p-2.5 rounded-full bg-white border border-stone-200 hover:border-demolay-gold text-stone-700 hover:text-demolay-gold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+              className="p-3 rounded-full bg-white border border-stone-200 hover:border-demolay-gold text-stone-700 hover:text-demolay-gold shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
               aria-label="Siguiente líder"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
 
-          {/* Indicators / Progress bar */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2 mt-6 max-w-full px-4">
+          {/* Selector por año: etiquetas legibles y áreas de toque grandes en vez de 22 puntos */}
+          <div className="flex flex-wrap items-center justify-center gap-1.5 mt-6 max-w-full px-2">
             {mcdsData.map((mcd, idx) => (
               <button
                 key={mcd.year}
                 onClick={() => selectSlide(idx)}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${currentIndex === idx
-                  ? 'w-8 bg-demolay-gold'
-                  : 'w-2 bg-stone-300 hover:bg-stone-400'
+                className={`min-h-[40px] min-w-[52px] px-2.5 rounded-lg text-xs font-bold font-sans tabular-nums border transition-colors duration-150 cursor-pointer ${currentIndex === idx
+                  ? 'bg-demolay-green-950 text-gold border-demolay-gold'
+                  : 'bg-white text-stone-600 border-stone-200 hover:border-demolay-gold hover:text-demolay-green-950'
                   }`}
-                aria-label={`Ir al año ${mcd.year}`}
-              />
+                aria-label={`Gestión ${mcd.year}: ${mcd.name}`}
+                aria-current={currentIndex === idx ? 'true' : undefined}
+              >
+                {mcd.year}
+              </button>
             ))}
           </div>
 

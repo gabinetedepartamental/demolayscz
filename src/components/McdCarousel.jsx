@@ -1,7 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, ChevronLeft, ChevronRight, Award } from 'lucide-react';
 import imgSandoval from '../assets/images/autoridades/sandoval.jpeg';
-import imgSotelo from '../assets/images/autoridades/sotelo saco.jpeg';
+import imgSotelo from '../assets/images/mcd/sotelo.jpeg';
+import imgMcd0 from '../assets/images/mcd/montenegro.jpeg';
+import imgMcd1 from '../assets/images/mcd/vicet.jpeg';
+import imgMcd2 from '../assets/images/mcd/melgar.jpeg';
+import imgMcd3 from '../assets/images/mcd/ivan.jpeg';
+import imgMcd4 from '../assets/images/mcd/arze.jpeg';
+import imgMcd5 from '../assets/images/mcd/otero.jpeg';
+import imgMcd6 from '../assets/images/mcd/rau.jpg';
+import imgMcd7 from '../assets/images/mcd/rivero.jpeg';
+import imgMcd8 from '../assets/images/mcd/palma.jpeg';
+import imgMcd9 from '../assets/images/mcd/carlos asbun.jpeg';
+import imgMcd10 from '../assets/images/mcd/wilson mendieta.jpeg';
+import imgMcd11 from '../assets/images/mcd/sanjines.jpeg';
+import imgMcd12 from '../assets/images/mcd/andres aguilera.jpeg';
+import imgMcd13 from '../assets/images/mcd/pantoja.jpeg';
+import imgMcd14 from '../assets/images/mcd/moreira.jpeg';
+import imgMcd15 from '../assets/images/mcd/salinas.jpg';
+import imgMcd16 from '../assets/images/mcd/alcoba.jpg';
+import imgMcd17 from '../assets/images/mcd/herrera.jpeg';
+import imgMcd18 from '../assets/images/mcd/saavedra.jpeg';
+import imgMcd19 from '../assets/images/mcd/carlos sandoval.jpeg';
+import imgMonroy from '../assets/images/mcd/monroy.jpg';
 
 const mcdsData = [
   {
@@ -19,7 +40,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Amistad y Fidelidad (#75014)',
     achievements: 'Fortalecimiento de la hermandad intercapitular y expansión de actividades de liderazgo en la jurisdicción.',
-    motto: 'Unión y Liderazgo por el Futuro'
+    motto: 'Unión y Liderazgo por el Futuro',
+    image: imgMcd0
   },
   {
     year: '2024',
@@ -27,7 +49,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Promoción del desarrollo integral de los miembros de la orden y consolidación de la presencia regional.',
-    motto: 'Compromiso y Deber Colectivo'
+    motto: 'Compromiso y Deber Colectivo',
+    image: imgMcd1
   },
   {
     year: '2023',
@@ -35,7 +58,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Amistad y Fidelidad (#75014)',
     achievements: 'Impulsor de la integración intercapitular y del reforzamiento de los lazos fraternales.',
-    motto: 'Fraternidad en Acción'
+    motto: 'Fraternidad en Acción',
+    image: imgMcd2
   },
   {
     year: '2022',
@@ -43,7 +67,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Amistad y Fidelidad (#75014)',
     achievements: 'Reactivación de actividades presenciales de liderazgo y organización de eventos departamentales.',
-    motto: 'Lealtad y Servicio Constante'
+    motto: 'Lealtad y Servicio Constante',
+    image: imgMcd3
   },
   {
     year: '2020',
@@ -60,7 +85,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Primax Santa Cruz 294 (#75009)',
     achievements: 'Fomento del civismo, labor filantrópica y fortalecimiento de las relaciones institucionales.',
-    motto: 'Servicio por el Progreso'
+    motto: 'Servicio por el Progreso',
+    image: imgMcd4
   },
   {
     year: '2018',
@@ -68,7 +94,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Primax Santa Cruz 294 (#75009)',
     achievements: 'Coordinación académica regional y fomento de los principios fundamentales de la orden.',
-    motto: 'Excelencia y Virtud'
+    motto: 'Excelencia y Virtud',
+    image: imgMcd5
   },
   {
     year: '2017',
@@ -76,7 +103,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Liderazgo y guía para las gestiones de los capítulos locales de Santa Cruz.',
-    motto: 'Convicción y Liderazgo'
+    motto: 'Convicción y Liderazgo',
+    image: imgMcd6
   },
   {
     year: '2016',
@@ -84,7 +112,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Primax Santa Cruz 294 (#75009)',
     achievements: 'Fomento de la disciplina, el ritualismo y el trabajo en equipo a nivel departamental.',
-    motto: 'Disciplina y Trabajo'
+    motto: 'Disciplina y Trabajo',
+    image: imgMonroy
   },
   {
     year: '2015',
@@ -92,7 +121,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Consolidación de proyectos comunitarios y promoción de los valores de la orden.',
-    motto: 'Valores en Alto'
+    motto: 'Valores en Alto',
+    image: imgMcd7
   },
   {
     year: '2014',
@@ -100,7 +130,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Cantera (#75024)',
     achievements: 'Participación activa en la fundación del Capítulo Cantera y liderazgo departamental destacado.',
-    motto: 'Construyendo el Futuro'
+    motto: 'Construyendo el Futuro',
+    image: imgMcd8
   },
   {
     year: '2013',
@@ -108,7 +139,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Promoción académica y ritualística intercapitular en el campamento.',
-    motto: 'Saber y Servir'
+    motto: 'Saber y Servir',
+    image: imgMcd9
   },
   {
     year: '2012',
@@ -116,7 +148,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Gestión y coordinación de la región con un fuerte enfoque de crecimiento institucional.',
-    motto: 'Unión para Avanzar'
+    motto: 'Unión para Avanzar',
+    image: imgMcd10
   },
   {
     year: '2011',
@@ -124,7 +157,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Unificación de las actividades intercapitulares y fomento del desarrollo personal.',
-    motto: 'Fraternidad Siempre'
+    motto: 'Fraternidad Siempre',
+    image: imgMcd11
   },
   {
     year: '2010',
@@ -132,7 +166,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Impulso de programas benéficos y civismo en la juventud departamental.',
-    motto: 'Compromiso Social'
+    motto: 'Compromiso Social',
+    image: imgMcd12
   },
   {
     year: '2009',
@@ -140,7 +175,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Liderazgo institucional en la formación de futuros líderes regionales.',
-    motto: 'Liderar es Servir'
+    motto: 'Liderar es Servir',
+    image: imgMcd13
   },
   {
     year: '2008',
@@ -148,7 +184,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Coordinación y fortalecimiento de la estructura administrativa regional.',
-    motto: 'Orden y Progreso'
+    motto: 'Orden y Progreso',
+    image: imgMcd14
   },
   {
     year: '2007',
@@ -156,7 +193,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Fomento del compañerismo y las virtudes filiales de la orden.',
-    motto: 'Hermandad y Virtud'
+    motto: 'Hermandad y Virtud',
+    image: imgMcd15
   },
   {
     year: '2006',
@@ -164,7 +202,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Coordinación de los primeros encuentros departamentales de liderazgo juvenil.',
-    motto: 'Unión y Acción'
+    motto: 'Unión y Acción',
+    image: imgMcd16
   },
   {
     year: '2005',
@@ -172,7 +211,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Promoción del desarrollo ético y moral de la juventud de la región.',
-    motto: 'Ética y Liderazgo'
+    motto: 'Ética y Liderazgo',
+    image: imgMcd17
   },
   {
     year: '2002',
@@ -180,7 +220,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Consolidación de las bases operativas de la orden en el departamento.',
-    motto: 'Bases Firmes, Futuro Brillante'
+    motto: 'Bases Firmes, Futuro Brillante',
+    image: imgMcd18
   },
   {
     year: '1998',
@@ -188,7 +229,8 @@ const mcdsData = [
     hometown: 'Santa Cruz de la Sierra',
     chapter: 'Jurisdicción Santa Cruz',
     achievements: 'Primeros hitos de liderazgo regional en la oficialía del campamento.',
-    motto: 'Pioneros del Legado'
+    motto: 'Pioneros del Legado',
+    image: imgMcd19
   }
 ];
 

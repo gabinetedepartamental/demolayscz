@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useModalBehavior from '../hooks/useModalBehavior';
-import { Unlock, FileText, Eye, X, BookOpen, Sparkles, BookMarked } from 'lucide-react';
+import { Unlock, FileText, Eye, X, BookOpen, Sparkles, BookMarked, ExternalLink } from 'lucide-react';
 import LiquidDownloadButton from './LiquidDownloadButton';
 
 const documents = [

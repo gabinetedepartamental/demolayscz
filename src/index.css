@@ -77,7 +77,8 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* backwards (no forwards): si el transform queda puesto, los modales "fixed" de adentro se posicionan relativo a la sección y no a la pantalla */
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 .animate-float {

@@ -300,7 +300,7 @@ export default function McdCarousel() {
 
                 {/* Animated Gold Crown glow */}
                 <div className="relative mb-4 z-10">
-                  <div className="w-36 h-36 md:w-44 md:h-44 rounded-lg border-2 border-demolay-gold bg-gradient-to-b from-stone-900 to-stone-950 flex flex-col items-center justify-center shadow-lg relative overflow-hidden group">
+                  <div className="w-36 h-36 md:w-44 md:h-44 rounded-lg border-2 border-demolay-gold bg-white flex flex-col items-center justify-center shadow-lg relative overflow-hidden group">
                     {currentMcd.image ? (
                       <img
                         src={currentMcd.image}
